@@ -152,3 +152,84 @@
     font-variant-numeric: tabular-nums;
   }
 }
+
+/* ===================================================================
+ * BLOG — typographie éditoriale rendue depuis markdown server-side
+ * =================================================================== */
+
+.prose-glass {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: rgb(255 255 255 / 0.85);
+}
+.prose-glass > * + * {
+  margin-top: 1.4em;
+}
+.prose-glass h2 {
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  line-height: 1.2;
+  font-style: italic;
+  color: var(--glass-white);
+  margin-top: 2.5em;
+  letter-spacing: -0.01em;
+}
+.prose-glass h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--glass-white);
+  margin-top: 2em;
+}
+.prose-glass strong {
+  color: var(--glass-white);
+  font-weight: 600;
+}
+.prose-glass a {
+  color: var(--glass-rose);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 200ms;
+}
+.prose-glass a:hover {
+  color: var(--glass-rose-deep);
+}
+.prose-glass blockquote {
+  border-left: 2px solid var(--glass-rose);
+  padding-left: 1.25rem;
+  margin: 2em 0;
+  font-style: italic;
+  color: rgb(255 255 255 / 0.7);
+}
+.prose-glass blockquote p {
+  margin: 0;
+}
+.prose-glass ul,
+.prose-glass ol {
+  padding-left: 1.5rem;
+}
+.prose-glass ul li {
+  list-style: none;
+  position: relative;
+}
+.prose-glass ul li::before {
+  content: "·";
+  position: absolute;
+  left: -1rem;
+  color: var(--glass-rose);
+  font-weight: 700;
+}
+.prose-glass code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  background: rgb(255 255 255 / 0.06);
+  padding: 0.15em 0.4em;
+  border-radius: 2px;
+  font-size: 0.92em;
+}
+.prose-glass img {
+  margin: 2em 0;
+  width: 100%;
+  height: auto;
+}
