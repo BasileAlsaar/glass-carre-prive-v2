@@ -1,3 +1,7 @@
+/**
+ * @deprecated Replaced by <OfferSplit /> in CHANGE 3. Kept for reference only.
+ * Do not import.
+ */
 "use client";
 
 import { motion } from "framer-motion";

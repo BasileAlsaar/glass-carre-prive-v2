@@ -1,3 +1,8 @@
+/**
+ * @deprecated Replaced by 4 × <OfferSplit /> rendered directly in app/page.tsx
+ * (CHANGE 3 — split 50/50 photo|fiche pattern). Kept for reference only.
+ * Do not import.
+ */
 "use client";
 
 import { OfferCard } from "@/components/offers/OfferCard";

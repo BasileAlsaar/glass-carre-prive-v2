@@ -42,6 +42,8 @@ export type Offer = {
   tiers: readonly OfferTier[];
   /** Lien CTA — ancre vers le formulaire avec pré-remplissage. */
   ctaHref: `#contact-form?type=${OfferId}`;
+  /** Photo officielle client (V1 assets). */
+  imageSrc: `/images/formule-${OfferId}.jpg`;
 };
 
 export const OFFERS: readonly Offer[] = [
@@ -66,6 +68,7 @@ export const OFFERS: readonly Offer[] = [
       },
     ],
     ctaHref: "#contact-form?type=privatisation-seche",
+    imageSrc: "/images/formule-privatisation-seche.jpg",
   },
   {
     id: "apero",
@@ -91,6 +94,7 @@ export const OFFERS: readonly Offer[] = [
       },
     ],
     ctaHref: "#contact-form?type=apero",
+    imageSrc: "/images/formule-apero.jpg",
   },
   {
     id: "all-inclusive-50",
@@ -112,6 +116,7 @@ export const OFFERS: readonly Offer[] = [
       },
     ],
     ctaHref: "#contact-form?type=all-inclusive-50",
+    imageSrc: "/images/formule-all-inclusive-50.jpg",
   },
   {
     id: "all-inclusive-80",
@@ -133,6 +138,7 @@ export const OFFERS: readonly Offer[] = [
       },
     ],
     ctaHref: "#contact-form?type=all-inclusive-80",
+    imageSrc: "/images/formule-all-inclusive-80.jpg",
   },
 ] as const;
 

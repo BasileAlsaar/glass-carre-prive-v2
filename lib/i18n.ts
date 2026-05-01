@@ -45,6 +45,9 @@ export type Dictionary = {
     lede: string;
     priceLabel: string;
     privatizeFormula: string;
+    included: string;
+    options: string;
+    choose: string;
   };
   about: {
     eyebrow: string;
@@ -180,6 +183,9 @@ const FR: Dictionary = {
     lede: "De l'apéro corporate à l'all inclusive jusqu'à 5h, choisissez le format qui correspond à votre soirée.",
     priceLabel: "Tarif",
     privatizeFormula: "Privatiser cette formule",
+    included: "INCLUS",
+    options: "EN OPTION",
+    choose: "Choisir cette formule",
   },
   about: {
     eyebrow: "LE LIEU",
@@ -337,6 +343,9 @@ const EN: Dictionary = {
     lede: "From a corporate aperitivo to an all-inclusive night until 5am — pick the format that fits your event.",
     priceLabel: "From",
     privatizeFormula: "Privatize this package",
+    included: "INCLUDED",
+    options: "OPTIONS",
+    choose: "Choose this package",
   },
   about: {
     eyebrow: "THE VENUE",
