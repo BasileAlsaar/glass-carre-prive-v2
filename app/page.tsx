@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero/Hero";
 import { OffersGrid } from "@/components/offers/OffersGrid";
 import { About } from "@/components/sections/About";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { Footer } from "@/components/sections/Footer";
 import { Gallery } from "@/components/sections/Gallery";
 import { PracticalInfo } from "@/components/sections/PracticalInfo";
 import { VoidAcoustics } from "@/components/sections/VoidAcoustics";
@@ -20,6 +21,7 @@ export default function Page() {
         <PracticalInfo />
         <ContactForm />
       </main>
+      <Footer />
     </>
   );
 }

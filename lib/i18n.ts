@@ -99,6 +99,21 @@ export type Dictionary = {
     requiredHint: string;
     typeOptions: ReadonlyArray<{ value: string; label: string }>;
   };
+  footer: {
+    contactLabel: string;
+    socialLabel: string;
+    hoursLabel: string;
+    hoursShort: string;
+    legalLabel: string;
+    creditsLabel: string;
+    copyright: string;
+    links: {
+      whatsapp: string;
+      instagram: string;
+      linkedin: string;
+      facebook: string;
+    };
+  };
 };
 
 const FR: Dictionary = {
@@ -202,6 +217,21 @@ const FR: Dictionary = {
       { value: "autre", label: "Autre" },
     ],
   },
+  footer: {
+    contactLabel: "CONTACT",
+    socialLabel: "SUIVEZ-NOUS",
+    hoursLabel: "HORAIRES",
+    hoursShort: "17h–05h · 7/7",
+    legalLabel: "Mentions légales",
+    creditsLabel: "Crédits photo Pexels",
+    copyright: "© 2026 Glass Club · Tous droits réservés.",
+    links: {
+      whatsapp: "WhatsApp",
+      instagram: "Instagram",
+      linkedin: "LinkedIn",
+      facebook: "Facebook",
+    },
+  },
 };
 
 const EN: Dictionary = {
@@ -304,6 +334,21 @@ const EN: Dictionary = {
       { value: "reservation", label: "Table booking" },
       { value: "autre", label: "Other" },
     ],
+  },
+  footer: {
+    contactLabel: "CONTACT",
+    socialLabel: "FOLLOW",
+    hoursLabel: "HOURS",
+    hoursShort: "5pm–5am · 7/7",
+    legalLabel: "Legal notice",
+    creditsLabel: "Pexels photo credits",
+    copyright: "© 2026 Glass Club · All rights reserved.",
+    links: {
+      whatsapp: "WhatsApp",
+      instagram: "Instagram",
+      linkedin: "LinkedIn",
+      facebook: "Facebook",
+    },
   },
 };
 
