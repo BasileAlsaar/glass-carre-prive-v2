@@ -5,6 +5,7 @@ import { Footer } from "@/components/sections/Footer";
 import { StickyHeader } from "@/components/header/StickyHeader";
 import { LocaleSync } from "@/components/menu/LocaleSync";
 import { MembershipConcept } from "@/components/membership/MembershipConcept";
+import { MembershipTiers } from "@/components/membership/MembershipTiers";
 import { LOCALES, type Locale } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function MembershipPage({ params }: { params: { locale: string } 
       <StickyHeader />
       <main aria-label="Membership Glass Club" className="bg-glass-black pt-16 md:pt-20">
         <MembershipConcept />
+        <MembershipTiers />
       </main>
       <Footer />
     </>

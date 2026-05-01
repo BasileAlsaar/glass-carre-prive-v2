@@ -146,8 +146,10 @@ export type Dictionary = {
     subtitle: string;
     /** Tagline d'accueil — verbatim glasscannes.com/events-1 (FR traduit fidèle). */
     intro: string;
+    emptyEyebrow: string;
     emptyTitle: string;
     emptyMessage: string;
+    emptyFestivalNote: string;
     statusUpcoming: string;
     statusSoldOut: string;
     statusReplay: string;
@@ -156,6 +158,7 @@ export type Dictionary = {
     ctaInfo: string;
     ctaInstagram: string;
     ctaShotgun: string;
+    ctaPrivatize: string;
   };
   membership: {
     title: string;
@@ -165,6 +168,13 @@ export type Dictionary = {
     body: string;
     cta: string;
     pageLabel: string;
+    tiersEyebrow: string;
+    tiersTitle: string;
+    /** Note discrète sous la grille des tiers (règles de cooptation). */
+    tiersIntro: string;
+    ctaRequest: string;
+    badgeMostRequested: string;
+    introOnlyNote: string;
   };
   blog: {
     title: string;
@@ -340,6 +350,9 @@ const FR: Dictionary = {
       { value: "all-inclusive-50", label: "All Inclusive 20–50 pax" },
       { value: "all-inclusive-80", label: "All Inclusive 50–80 pax" },
       { value: "reservation", label: "Réservation de table" },
+      { value: "membership-classic", label: "Membership Classic" },
+      { value: "membership-gold", label: "Membership Gold" },
+      { value: "membership-black", label: "Membership Black" },
       { value: "autre", label: "Autre" },
     ],
   },
@@ -391,17 +404,21 @@ const FR: Dictionary = {
     subtitle: "Programmation Glass Club",
     intro:
       "Des sélecteurs internationaux aux étoiles montantes underground, chaque semaine au Glass est soigneusement programmée pour faire vivre le dancefloor. Découvrez les prochaines nuits. Choisissez votre ambiance. Venez.",
-    emptyTitle: "Programmation à venir",
+    emptyEyebrow: "Programmation à venir",
+    emptyTitle: "La saison se prépare",
     emptyMessage:
-      "Suivez-nous sur Instagram pour les annonces, ou retrouvez-nous sur Shotgun pour les billetteries.",
+      "Glass Club ouvre ses portes 7 soirs sur 7. La programmation des soirées spéciales (DJ guests, festivals, événements signature) est annoncée en continu sur notre Instagram.",
+    emptyFestivalNote:
+      "Pour les afters de festival (Cannes Lions, MIPIM, MIPCOM, ILTM, Festival de Cannes…), nous contactons directement les organisations. Demandes via le formulaire.",
     statusUpcoming: "À venir",
     statusSoldOut: "Complet",
     statusReplay: "Replay",
     statusCancelled: "Annulé",
     ctaBooking: "Réserver",
     ctaInfo: "Plus d'infos",
-    ctaInstagram: "Instagram @glass_club_cannes",
+    ctaInstagram: "Suivre sur Instagram",
     ctaShotgun: "Voir sur Shotgun",
+    ctaPrivatize: "Privatiser une soirée",
   },
   membership: {
     title: "Membership",
@@ -410,6 +427,13 @@ const FR: Dictionary = {
     body: "Être membre du Glass, c'est vivre Cannes autrement. Une carte, des avantages exclusifs, et une place au cœur de la fête. Un cercle d'initiés pour célébrer, rencontrer, partager — pendant les festivals comme toute l'année.",
     cta: "Demander des informations",
     pageLabel: "Membership Glass Club",
+    tiersEyebrow: "Devenez membre",
+    tiersTitle: "Trois cercles privilégiés",
+    tiersIntro:
+      "Le Glass Circle est un programme confidentiel. Il ne se vend pas. Il se mérite — par la présence, par la recommandation, par la confiance mutuelle.",
+    ctaRequest: "Demander cette adhésion",
+    badgeMostRequested: "Le plus demandé",
+    introOnlyNote: "Sur introduction par un membre existant.",
   },
   blog: {
     title: "Le Journal",
@@ -587,6 +611,9 @@ const EN: Dictionary = {
       { value: "all-inclusive-50", label: "All Inclusive 20–50 pax" },
       { value: "all-inclusive-80", label: "All Inclusive 50–80 pax" },
       { value: "reservation", label: "Table booking" },
+      { value: "membership-classic", label: "Membership Classic" },
+      { value: "membership-gold", label: "Membership Gold" },
+      { value: "membership-black", label: "Membership Black" },
       { value: "autre", label: "Other" },
     ],
   },
@@ -637,17 +664,21 @@ const EN: Dictionary = {
     subtitle: "Glass Club programming",
     intro:
       "From international selectors to the underground rising stars, each week at the Glass is carefully curated to keep the floor alive. Check out the next nights. Pick your vibe. Show up.",
-    emptyTitle: "Programming coming soon",
+    emptyEyebrow: "Programming coming",
+    emptyTitle: "The season is being prepared",
     emptyMessage:
-      "Follow us on Instagram for announcements, or find us on Shotgun for tickets.",
+      "Glass Club is open 7 nights a week. The special events schedule (DJ guests, festivals, signature events) is announced on our Instagram.",
+    emptyFestivalNote:
+      "For festival afters (Cannes Lions, MIPIM, MIPCOM, ILTM, Festival de Cannes…), we reach out to organisations directly. Requests via the contact form.",
     statusUpcoming: "Upcoming",
     statusSoldOut: "Sold Out",
     statusReplay: "Replay",
     statusCancelled: "Cancelled",
     ctaBooking: "Book",
     ctaInfo: "More info",
-    ctaInstagram: "Instagram @glass_club_cannes",
+    ctaInstagram: "Follow on Instagram",
     ctaShotgun: "View on Shotgun",
+    ctaPrivatize: "Privatize an event",
   },
   membership: {
     title: "Membership",
@@ -656,6 +687,13 @@ const EN: Dictionary = {
     body: "Being a Glass member means experiencing Cannes differently. A card, exclusive perks, and a seat at the heart of the celebration. An insiders' circle to celebrate, meet, share — during the festivals and all year round.",
     cta: "Request more information",
     pageLabel: "Glass Club membership",
+    tiersEyebrow: "Become a member",
+    tiersTitle: "Three privileged circles",
+    tiersIntro:
+      "The Glass Circle is a confidential programme. It isn't sold — it's earned, through presence, referral and mutual trust.",
+    ctaRequest: "Request membership",
+    badgeMostRequested: "Most requested",
+    introOnlyNote: "On introduction from an existing member.",
   },
   blog: {
     title: "The Journal",

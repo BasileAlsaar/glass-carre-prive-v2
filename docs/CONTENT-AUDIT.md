@@ -100,14 +100,58 @@ Source covers : `/Users/admin/glass-cannes-site/public/images/magazine/*.jpg`
 
 ---
 
-## Questions ouvertes pour la suite
+## Décisions tranchées
 
-À résoudre avec le client avant la production :
+### Q1 Events — TRANCHÉ ✅
 
-1. **Events** — On branche l'API Shotgun.live (la source réelle V1 production) ou on attend que Caroline fournisse une liste manuelle d'événements ? Tant que pas tranché, la page reste en empty state.
+**Décision : Shotgun.live à brancher dans une itération ultérieure** (après validation Caroline). Variables d'environnement à prévoir le moment venu : `SHOTGUN_API_KEY`, `SHOTGUN_VENUE_ID`. Le composant `EventsList` est déjà typé pour recevoir un `GlassEvent[]` dynamique, donc le branchement futur consistera juste à remplir `EVENTS` ou à fetch côté serveur dans `app/[locale]/events/page.tsx`.
 
-2. **Membership** — On reste sur la variante C concept seul, ou on ajoute le système Classic / Gold / Black de V1 local (« Sur recommandation » / « Sur invitation », pas de prix numériques) ? Le client doit valider que ce système est bien le sien.
+En attendant, la page affiche un empty state amélioré :
+- Eyebrow rose tracking-[0.4em] "Programmation à venir"
+- Titre Fraunces italic "La saison se prépare"
+- Paragraphe explicatif sur l'ouverture 7/7 et l'annonce Instagram
+- Double CTA Instagram (rose plein) + Privatiser (outline)
+- Mention italique sur les afters de festival
 
-3. **Blog** — On garde les 3 articles V1 local (Void Acoustics, Cocktail, Cannes Festivals), ou on tente d'importer aussi les 4 articles SEO de glasscannes.com (« Top 5 bars festifs… ») ? Ces derniers sont moins éditoriaux mais peut-être stratégiques pour le SEO.
+### Q2 Membership — TRANCHÉ ✅
 
-4. **Images events/blog** — On copie celles du V1 local quand elles existent, sinon on fait sans. Pas de Pexels supplémentaire (cf. consigne « aucune invention »).
+**Décision : tiers Classic / Gold / Black réintroduits** depuis le V1 local.
+
+Source de vérité : `/Users/admin/glass-cannes-site/src/messages/fr.json` lignes 234-302 (FR) et `/Users/admin/glass-cannes-site/src/messages/en.json` lignes 234-302 (EN), section `membershipPage.tiers`.
+
+| Tier | Prix | Avantages | Particularités |
+|---|---|---|---|
+| Classic | "Sur recommandation" / "By referral" | 4 puces (réservation prioritaire, pré-vente, +1 offert, bouteille anniversaire) | — |
+| Gold | "Sur invitation" / "By invitation" | 6 puces (incl. table garantie, soirées privées, WhatsApp Caroline, code d'entrée) | Badge "Le plus demandé" |
+| Black | "Confidentiel" / "Confidential" | 6 puces (incl. privatisation 1×/an offerte, concierge événementiel, signature DJ) | Note "Sur introduction par un membre existant", border rose plein |
+
+**Aucun prix numérique inventé.** V1 local ne mentionne aucun montant ; je conserve les libellés textuels tels quels.
+
+Stockage : `lib/membership.ts` (type `MembershipTier` strict, `ctaHref` typé en template literal `#contact-form?type=membership-${TierId}`).
+
+ContactForm étendu avec 3 nouvelles options de type (`membership-classic`, `membership-gold`, `membership-black`) pour que le pré-remplissage URL fonctionne.
+
+### Q3 Blog — TRANCHÉ ✅
+
+**Décision : les 3 articles V1 local sont conservés tels quels.** Les 4 articles SEO de glasscannes.com production (« Top 5 bars festifs… ») NE sont PAS importés (qualité éditoriale > volume SEO). Caroline ré-ouvrira la question le jour où elle veut faire du contenu SEO ; à ce moment-là, on importe les 4 ou on en écrit d'autres.
+
+Aucun changement de code par rapport à la V2 livrée.
+
+### Q4 Images events — TRANCHÉ ✅
+
+**Décision : non bloquant.** Pas de photos d'événements pour la V2 (la page est en empty state). Caroline pourra fournir des photos quand un calendrier d'événements sera publié. Pas de Pexels supplémentaire.
+
+---
+
+## Note V1 local — articles blog conservés
+
+Articles importés dans `content/blog/{fr,en}/*.mdx` :
+
+| Slug | Title FR | Date | Author | Cover |
+|---|---|---|---|---|
+| `void-acoustics-pourquoi-le-son-compte` | Void Acoustics : pourquoi on a choisi ce son | 2026-03-12 | Caroline | `void-acoustics-cover.jpg` |
+| `art-de-cocktail-apres-minuit` | L'art du cocktail après minuit | 2026-01-18 | Caroline | `cocktail-cover.jpg` |
+| `cannes-au-dela-du-festival` | Cannes, au-delà du Festival | 2026-02-28 | Caroline | `cannes-festivals-cover.jpg` |
+
+Source : `/Users/admin/glass-cannes-site/content/magazine/{fr,en}/*.mdx`
+Source covers : `/Users/admin/glass-cannes-site/public/images/magazine/*.jpg`
