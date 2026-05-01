@@ -1,9 +1,140 @@
 @import "tailwindcss";
+@plugin "tailwindcss-animate";
 
-/* Tokens et @theme arrivent à l'étape 3 (DESIGN TOKENS). */
+/* =================================================================
+ * GLASS — DESIGN TOKENS
+ * Source de vérité : .claude/BRIEF.md §3.1 (palette) et §3.2 (typo)
+ * ================================================================= */
 
-html,
-body {
-  background: #0a0a0a;
-  color: #ffffff;
+@theme {
+  /* === Palette Glass — §3.1 BRIEF (8 vars exactes, intouchables) === */
+  --glass-black: #0a0a0a;
+  --glass-ink: #141414;
+  --glass-white: #ffffff;
+  --glass-mute: #8a8a8a;
+  --glass-flame: #f2501f;
+  --glass-burgundy: #641707;
+  --glass-blood: #8b0404;
+  --glass-rose: #f77ca0;
+
+  /* === Tokens shadcn remappés sur la palette Glass === */
+  /* Base / surfaces */
+  --color-background: var(--glass-black);
+  --color-foreground: var(--glass-white);
+  --color-card: var(--glass-ink);
+  --color-card-foreground: var(--glass-white);
+  --color-popover: var(--glass-ink);
+  --color-popover-foreground: var(--glass-white);
+
+  /* CTA primaire — réservé au flame (§3.1 règle stricte) */
+  --color-primary: var(--glass-flame);
+  --color-primary-foreground: var(--glass-white);
+
+  /* Secondaire / muted / accent */
+  --color-secondary: var(--glass-ink);
+  --color-secondary-foreground: var(--glass-white);
+  --color-muted: var(--glass-ink);
+  --color-muted-foreground: var(--glass-mute);
+  --color-accent: var(--glass-burgundy);
+  --color-accent-foreground: var(--glass-white);
+
+  /* Erreur */
+  --color-destructive: var(--glass-blood);
+  --color-destructive-foreground: var(--glass-white);
+
+  /* Bordures, inputs, focus ring */
+  --color-border: rgb(255 255 255 / 0.1);
+  --color-input: rgb(255 255 255 / 0.12);
+  --color-ring: var(--glass-flame);
+
+  /* === Couleurs Glass exposées comme utilities Tailwind ===
+   * → bg-glass-flame, text-glass-mute, border-glass-burgundy, etc.
+   * Les vars brutes --glass-* restent dispo via var(--glass-flame). */
+  --color-glass-black: var(--glass-black);
+  --color-glass-ink: var(--glass-ink);
+  --color-glass-white: var(--glass-white);
+  --color-glass-mute: var(--glass-mute);
+  --color-glass-flame: var(--glass-flame);
+  --color-glass-burgundy: var(--glass-burgundy);
+  --color-glass-blood: var(--glass-blood);
+  --color-glass-rose: var(--glass-rose);
+
+  /* === Typographies — §3.2 BRIEF ===
+   * next/font expose --font-fraunces et --font-inter sur <html>.
+   * Fallback chain pour le risque R3 (font 404). */
+  --font-sans:
+    var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+
+  /* === Radius — sobre, peu d'arrondi (luxe éditorial) === */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.375rem;
+}
+
+/* =================================================================
+ * BASE — reset Glass
+ * ================================================================= */
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--glass-black);
+    color: var(--glass-white);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--glass-flame);
+    color: var(--glass-white);
+  }
+
+  /* §6 — header sticky : offset les ancres au scroll (R11) */
+  section[id] {
+    scroll-margin-top: 96px;
+  }
+
+  /* §11 — prefers-reduced-motion : toutes animations désactivées */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* =================================================================
+ * UTILITIES — helpers Glass spécifiques
+ * ================================================================= */
+
+@layer utilities {
+  /* Tracking serré sur les capitales display (§3.2) */
+  .tracking-display {
+    letter-spacing: -0.02em;
+  }
+  /* Tracking large sur les labels uppercase (§3.2) */
+  .tracking-label {
+    letter-spacing: 0.08em;
+  }
+  /* Chiffres tabular pour les tarifs (§3.2) */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
 }

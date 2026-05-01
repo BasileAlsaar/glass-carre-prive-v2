@@ -1,10 +1,12 @@
 export default function Page() {
   return (
-    <main className="flex min-h-screen items-center justify-center p-12">
+    <main className="flex min-h-screen items-center justify-center bg-background p-12 text-foreground">
       <div className="text-center">
-        <p className="text-xs uppercase tracking-[0.2em] text-white/50">Glass Club · V2</p>
-        <h1 className="mt-4 text-4xl">Scaffold prêt.</h1>
-        <p className="mt-2 text-sm text-white/60">
+        <p className="tracking-label text-xs uppercase text-muted-foreground">
+          Glass Club · V2
+        </p>
+        <h1 className="font-display tracking-display mt-4 text-4xl">Tokens en place.</h1>
+        <p className="mt-2 text-sm text-muted-foreground">
           Sections à construire à partir de l'étape 4 du BRIEF.
         </p>
       </div>
