@@ -71,6 +71,9 @@
   --radius-md: 0.125rem;
   --radius-lg: 0.25rem;
   --radius-xl: 0.375rem;
+
+  /* === Animations §11 === */
+  --animate-marquee: marquee 60s linear infinite;
 }
 
 /* =================================================================
@@ -136,5 +139,19 @@
   /* Chiffres tabular pour les tarifs (§3.2) */
   .tabular {
     font-variant-numeric: tabular-nums;
+  }
+  /* Pause du marquee au hover (§11) */
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* §11 — Marquee horizontal infini, 60s/loop, pause au hover */
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
   }
 }

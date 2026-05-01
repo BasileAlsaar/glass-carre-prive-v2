@@ -2,6 +2,7 @@ import { StickyHeader } from "@/components/header/StickyHeader";
 import { Hero } from "@/components/hero/Hero";
 import { OffersGrid } from "@/components/offers/OffersGrid";
 import { FloatingCTA } from "@/components/cta/FloatingCTA";
+import { Marquee } from "@/components/motion/Marquee";
 import { About } from "@/components/sections/About";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Footer } from "@/components/sections/Footer";
@@ -16,9 +17,11 @@ export default function Page() {
       <main id="top">
         <Hero />
         <OffersGrid />
+        <Marquee />
         <About />
         <VoidAcoustics />
         <Gallery />
+        <Marquee />
         <PracticalInfo />
         <ContactForm />
       </main>
