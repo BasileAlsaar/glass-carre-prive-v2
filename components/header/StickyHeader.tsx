@@ -17,14 +17,19 @@ import {
 import { useLocale } from "@/lib/locale-context";
 import { cn } from "@/lib/utils";
 
-const NAV_LINKS = [
-  { href: "#formule-privatisation-seche", labelKey: "privatization" },
-  { href: "#carte", labelKey: "menu" },
-  { href: "#events", labelKey: "events" },
-  { href: "#membership", labelKey: "membership" },
-  { href: "#blog", labelKey: "blog" },
-  { href: "#lieu", labelKey: "about" },
-] as const;
+type NavLabelKey = "privatization" | "menu" | "events" | "membership" | "blog" | "about";
+type NavLink = { href: string; labelKey: NavLabelKey };
+
+function buildNavLinks(locale: "fr" | "en"): readonly NavLink[] {
+  return [
+    { href: "/#formule-privatisation-seche", labelKey: "privatization" },
+    { href: `/${locale}/carte`, labelKey: "menu" },
+    { href: "/#events", labelKey: "events" },
+    { href: "#membership", labelKey: "membership" },
+    { href: "#blog", labelKey: "blog" },
+    { href: "/#lieu", labelKey: "about" },
+  ];
+}
 
 const PRIMARY_CTA_BASE =
   "tracking-label inline-flex items-center gap-2 bg-glass-rose px-5 text-[11px] font-medium uppercase text-glass-black transition-all hover:gap-3 hover:bg-glass-burgundy hover:text-glass-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-2 focus-visible:ring-offset-glass-black";
@@ -33,8 +38,9 @@ const OUTLINE_CTA_BASE =
   "tracking-label inline-flex items-center justify-center border border-glass-rose px-5 text-[11px] font-medium uppercase text-glass-rose transition-colors hover:bg-glass-rose hover:text-glass-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-2 focus-visible:ring-offset-glass-black";
 
 export function StickyHeader() {
-  const { dictionary } = useLocale();
+  const { dictionary, locale } = useLocale();
   const [open, setOpen] = useState(false);
+  const NAV_LINKS = buildNavLinks(locale);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-glass-black/70 backdrop-blur-md">

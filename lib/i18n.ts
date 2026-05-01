@@ -141,6 +141,44 @@ export type Dictionary = {
   alts: {
     practicalCannes: string;
   };
+  menu: {
+    title: string;
+    subtitle: string;
+    categories: {
+      signature: string;
+      classics: string;
+      nonAlcoholic: string;
+      soft: string;
+      beers: string;
+      wines: string;
+      procesco: string;
+      spritzs: string;
+      shots: string;
+      vodka: string;
+      gin: string;
+      tequila: string;
+      rum: string;
+      whisky: string;
+      liqueurs: string;
+      champagne: string;
+    };
+    units: {
+      glass: string;
+      piscine: string;
+      bottle75: string;
+      bottle70: string;
+      bottle150: string;
+      bottle175: string;
+    };
+    footer: {
+      bottles: string;
+      service: string;
+      warning: string;
+    };
+    /** aria-label sur le main de /carte. */
+    pageLabel: string;
+    priceAria: string;
+  };
   keyFigures: {
     regionLabel: string;
     stats: ReadonlyArray<{
@@ -301,6 +339,45 @@ const FR: Dictionary = {
   alts: {
     practicalCannes: "Vieux Port de Cannes la nuit, reflets sur l'eau",
   },
+  menu: {
+    title: "La Carte",
+    subtitle: "Glass Club · Carré d'Or · Cannes",
+    categories: {
+      signature: "Cocktails Signature",
+      classics: "Les Classiques",
+      nonAlcoholic: "Cocktails sans alcool",
+      soft: "Soft",
+      beers: "Bières",
+      wines: "Vins",
+      procesco: "Procesco",
+      spritzs: "Les Spritzs",
+      shots: "Shots",
+      vodka: "Vodka",
+      gin: "Gin",
+      tequila: "Tequila",
+      rum: "Rhum",
+      whisky: "Whisky",
+      liqueurs: "Liqueurs",
+      champagne: "Champagne",
+    },
+    units: {
+      glass: "Le Verre",
+      piscine: "Piscine",
+      bottle75: "Bouteille 75cl",
+      bottle70: "70cl",
+      bottle150: "150cl",
+      bottle175: "175cl",
+    },
+    footer: {
+      bottles:
+        "Nos bouteilles sont servies avec 3 cannettes de RedBull 25cl et une bouteille de soft au choix.",
+      service: "Prix nets, service inclus. La maison n'accepte pas les chèques.",
+      warning:
+        "L'abus d'alcool est dangereux pour la santé, à consommer avec modération.",
+    },
+    pageLabel: "Carte du Glass Club",
+    priceAria: "Prix",
+  },
   keyFigures: {
     regionLabel: "Chiffres clés",
     stats: [
@@ -459,6 +536,45 @@ const EN: Dictionary = {
   },
   alts: {
     practicalCannes: "Old Port of Cannes at night, lights reflected on the water",
+  },
+  menu: {
+    title: "The Menu",
+    subtitle: "Glass Club · Carré d'Or · Cannes",
+    categories: {
+      signature: "Signature Cocktails",
+      classics: "Classics",
+      nonAlcoholic: "Mocktails",
+      soft: "Soft Drinks",
+      beers: "Beers",
+      wines: "Wines",
+      procesco: "Procesco",
+      spritzs: "Spritzs",
+      shots: "Shots",
+      vodka: "Vodka",
+      gin: "Gin",
+      tequila: "Tequila",
+      rum: "Rum",
+      whisky: "Whisky",
+      liqueurs: "Liqueurs",
+      champagne: "Champagne",
+    },
+    units: {
+      glass: "By the glass",
+      piscine: "Piscine",
+      bottle75: "Bottle 75cl",
+      bottle70: "70cl",
+      bottle150: "150cl",
+      bottle175: "175cl",
+    },
+    footer: {
+      bottles:
+        "Our bottles come with 3 RedBull cans (25cl) and 1 soft drink of your choice.",
+      service: "Prices include service. We don't accept cheques.",
+      warning:
+        "Excessive alcohol consumption is harmful to health. Drink responsibly.",
+    },
+    pageLabel: "Glass Club menu",
+    priceAria: "Price",
   },
   keyFigures: {
     regionLabel: "Key figures",

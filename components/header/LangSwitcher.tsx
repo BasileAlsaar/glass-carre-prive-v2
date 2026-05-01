@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { LOCALES, type Locale } from "@/lib/i18n";
@@ -36,8 +37,18 @@ const LOCALE_LABEL: Record<Locale, string> = { fr: "Français", en: "English" };
 
 export function LangSwitcher({ className }: { className?: string }) {
   const { locale, setLocale } = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
+
+  function handleSelect(next: Locale) {
+    setLocale(next);
+    setOpen(false);
+    if (pathname && /^\/(fr|en)(\/|$)/.test(pathname)) {
+      router.push(pathname.replace(/^\/(fr|en)/, `/${next}`));
+    }
+  }
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
@@ -87,10 +98,7 @@ export function LangSwitcher({ className }: { className?: string }) {
                   type="button"
                   role="option"
                   aria-selected={locale === l}
-                  onClick={() => {
-                    setLocale(l);
-                    setOpen(false);
-                  }}
+                  onClick={() => handleSelect(l)}
                   className={cn(
                     "tracking-label inline-flex w-full items-center gap-2 px-3 py-2 text-[11px] uppercase transition-colors hover:bg-glass-rose/10 hover:text-glass-rose focus-visible:bg-glass-rose/10 focus-visible:outline-none",
                     locale === l ? "text-glass-white" : "text-glass-mute",
