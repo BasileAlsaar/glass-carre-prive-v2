@@ -19,10 +19,12 @@ export type Dictionary = {
     description: string;
   };
   nav: {
-    venue: string;
     privatization: string;
+    menu: string;
     events: string;
-    contact: string;
+    membership: string;
+    blog: string;
+    about: string;
   };
   cta: {
     privatize: string;
@@ -154,10 +156,12 @@ const FR: Dictionary = {
       "Bar-club privatisable au cœur du Carré d'Or, à 3 minutes du Palais des Festivals. Privatisation, événements, formules sur mesure.",
   },
   nav: {
-    venue: "LE LIEU",
-    privatization: "PRIVATISATIONS",
-    events: "EVENTS",
-    contact: "CONTACT",
+    privatization: "PRIVATISATION",
+    menu: "CARTE",
+    events: "ÉVÉNEMENTS",
+    membership: "MEMBERSHIP",
+    blog: "BLOG",
+    about: "À PROPOS",
   },
   cta: {
     privatize: "PRIVATISER",
@@ -309,10 +313,12 @@ const EN: Dictionary = {
       "Cocktail bar and club in Cannes, 3 minutes from the Palais des Festivals. Private events, corporate events, venue privatization.",
   },
   nav: {
-    venue: "THE VENUE",
     privatization: "PRIVATIZATION",
+    menu: "MENU",
     events: "EVENTS",
-    contact: "CONTACT",
+    membership: "MEMBERSHIP",
+    blog: "BLOG",
+    about: "ABOUT",
   },
   cta: {
     privatize: "PRIVATIZE",

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import { LanguageSwitch } from "@/components/header/LanguageSwitch";
+import { LangSwitcher } from "@/components/header/LangSwitcher";
 import { ReservationDialog } from "@/components/cta/ReservationDialog";
 import {
   Sheet,
@@ -18,10 +18,12 @@ import { useLocale } from "@/lib/locale-context";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { href: "#lieu", labelKey: "venue" },
-  { href: "#privatisations", labelKey: "privatization" },
+  { href: "#formule-privatisation-seche", labelKey: "privatization" },
+  { href: "#carte", labelKey: "menu" },
   { href: "#events", labelKey: "events" },
-  { href: "#contact", labelKey: "contact" },
+  { href: "#membership", labelKey: "membership" },
+  { href: "#blog", labelKey: "blog" },
+  { href: "#lieu", labelKey: "about" },
 ] as const;
 
 const PRIMARY_CTA_BASE =
@@ -37,9 +39,8 @@ export function StickyHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-glass-black/70 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-4 px-5 md:h-20 md:px-8">
-        {/* LEFT — FR/EN + logo */}
-        <div className="flex items-center gap-5">
-          <LanguageSwitch className="hidden md:flex" />
+        {/* LEFT — logo + FR/EN cluster */}
+        <div className="flex items-center gap-3 md:gap-4">
           <Link href="#top" aria-label="Glass Club — accueil" className="block shrink-0">
             <Image
               src="/logo/glass-logo-blanc.png"
@@ -47,15 +48,16 @@ export function StickyHeader() {
               width={5000}
               height={5000}
               priority
-              sizes="48px"
-              className="h-10 w-10 md:h-12 md:w-12"
+              sizes="40px"
+              className="h-9 w-9 md:h-10 md:w-10"
             />
           </Link>
+          <LangSwitcher className="hidden md:block" />
         </div>
 
-        {/* CENTER — nav (desktop) */}
-        <nav aria-label="Navigation principale" className="hidden lg:block">
-          <ul className="tracking-label flex items-center gap-7 text-[11px] uppercase">
+        {/* CENTER — nav 6 ancres (desktop xl+) */}
+        <nav aria-label="Navigation principale" className="hidden xl:block">
+          <ul className="tracking-label flex items-center gap-6 text-[11px] uppercase">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
@@ -88,7 +90,7 @@ export function StickyHeader() {
               <button
                 type="button"
                 aria-label="Ouvrir le menu"
-                className="inline-flex h-10 w-10 items-center justify-center text-glass-white transition-colors hover:text-glass-rose focus-visible:text-glass-rose focus-visible:outline-none md:hidden"
+                className="inline-flex h-10 w-10 items-center justify-center text-glass-white transition-colors hover:text-glass-rose focus-visible:text-glass-rose focus-visible:outline-none xl:hidden"
               >
                 <Menu size={22} aria-hidden="true" />
               </button>
@@ -117,7 +119,7 @@ export function StickyHeader() {
                   ))}
                 </ul>
                 <div className="border-t border-white/10 pt-6">
-                  <LanguageSwitch />
+                  <LangSwitcher />
                 </div>
                 <div className="flex flex-col gap-3 border-t border-white/10 pt-6">
                   <a
