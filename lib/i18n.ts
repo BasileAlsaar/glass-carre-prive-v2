@@ -77,6 +77,28 @@ export type Dictionary = {
     /** §4.6 INTOUCHABLE — schedule complet. */
     schedule: string;
   };
+  contact: {
+    eyebrow: string;
+    title: string;
+    lede: string;
+    nameLabel: string;
+    emailLabel: string;
+    phoneLabel: string;
+    typeLabel: string;
+    typePlaceholder: string;
+    dateLabel: string;
+    guestsLabel: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    submitButton: string;
+    submitting: string;
+    successTitle: string;
+    successDescription: string;
+    errorTitle: string;
+    errorDescription: string;
+    requiredHint: string;
+    typeOptions: ReadonlyArray<{ value: string; label: string }>;
+  };
 };
 
 const FR: Dictionary = {
@@ -150,6 +172,36 @@ const FR: Dictionary = {
     schedule:
       "Ouvert du jeudi au samedi de 00h à 07h. Ouvert tous les jours pendant les grands congrès : MIPIM, MIPCOM, Cannes Lions, MAPIC, ILTM, TFWA, MIDEM, Festival de Cannes.",
   },
+  contact: {
+    eyebrow: "PRIVATISATION",
+    title: "Parlons de votre soirée.",
+    lede: "Réponse sous 24h. Caroline reprend chaque demande personnellement.",
+    nameLabel: "Nom complet",
+    emailLabel: "Email",
+    phoneLabel: "Téléphone",
+    typeLabel: "Type d'événement",
+    typePlaceholder: "Sélectionner",
+    dateLabel: "Date souhaitée",
+    guestsLabel: "Nombre d'invités",
+    messageLabel: "Message",
+    messagePlaceholder:
+      "Décrivez votre événement : objectif, ambiance, contraintes éventuelles…",
+    submitButton: "Envoyer la demande",
+    submitting: "Envoi…",
+    successTitle: "Demande envoyée.",
+    successDescription: "Caroline vous répondra sous 24h.",
+    errorTitle: "Erreur d'envoi.",
+    errorDescription: "Réessayez ou écrivez à caroline@glasscannes.com.",
+    requiredHint: "Champs obligatoires",
+    typeOptions: [
+      { value: "privatisation-seche", label: "Privatisation sèche (21h–4h)" },
+      { value: "apero", label: "Apéro (17h–20h)" },
+      { value: "all-inclusive-50", label: "All Inclusive 20–50 pax" },
+      { value: "all-inclusive-80", label: "All Inclusive 50–80 pax" },
+      { value: "reservation", label: "Réservation de table" },
+      { value: "autre", label: "Autre" },
+    ],
+  },
 };
 
 const EN: Dictionary = {
@@ -222,6 +274,36 @@ const EN: Dictionary = {
     viewMap: "View on Google Maps",
     schedule:
       "Open Thursday to Saturday from 12 AM to 7 AM. Open every day during major congresses such as: MIPIM, MIPCOM, Cannes Lions, MAPIC, ILTM, TFWA, MIDEM, Festival de Cannes.",
+  },
+  contact: {
+    eyebrow: "PRIVATIZATION",
+    title: "Let's talk about your event.",
+    lede: "Reply within 24h. Caroline handles every request personally.",
+    nameLabel: "Full name",
+    emailLabel: "Email",
+    phoneLabel: "Phone",
+    typeLabel: "Event type",
+    typePlaceholder: "Select",
+    dateLabel: "Preferred date",
+    guestsLabel: "Number of guests",
+    messageLabel: "Message",
+    messagePlaceholder:
+      "Tell us about your event — goal, atmosphere, any specific needs…",
+    submitButton: "Send request",
+    submitting: "Sending…",
+    successTitle: "Request sent.",
+    successDescription: "Caroline will get back to you within 24h.",
+    errorTitle: "Sending error.",
+    errorDescription: "Please try again or write to caroline@glasscannes.com.",
+    requiredHint: "Required fields",
+    typeOptions: [
+      { value: "privatisation-seche", label: "Full privatization (9pm–4am)" },
+      { value: "apero", label: "Aperitivo (5pm–8pm)" },
+      { value: "all-inclusive-50", label: "All Inclusive 20–50 pax" },
+      { value: "all-inclusive-80", label: "All Inclusive 50–80 pax" },
+      { value: "reservation", label: "Table booking" },
+      { value: "autre", label: "Other" },
+    ],
   },
 };
 
