@@ -25,7 +25,7 @@ export function OfferCard({ offer, index, ctaLabel }: OfferCardProps) {
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.8, delay: index * 0.12, ease: EASE }}
       style={{ transformPerspective: 1000 }}
-      className="group relative flex flex-col bg-glass-ink p-8 transition-colors hover:border-glass-flame/40 md:p-10 border border-white/10"
+      className="group relative flex flex-col bg-glass-ink p-8 transition-colors hover:border-glass-rose/40 md:p-10 border border-white/10"
     >
       <header className="flex items-baseline justify-between gap-4 border-b border-white/10 pb-4">
         <h3 className="font-display tracking-display text-2xl text-glass-white">{offer.name}</h3>
@@ -40,7 +40,7 @@ export function OfferCard({ offer, index, ctaLabel }: OfferCardProps) {
         {offer.highlights.map((h) => (
           <li
             key={h}
-            className="flex gap-3 before:mt-[0.65em] before:block before:h-px before:w-3 before:flex-none before:bg-glass-flame"
+            className="flex gap-3 before:mt-[0.65em] before:block before:h-px before:w-3 before:flex-none before:bg-glass-rose"
           >
             <span>{h}</span>
           </li>
@@ -83,7 +83,7 @@ export function OfferCard({ offer, index, ctaLabel }: OfferCardProps) {
 
         <a
           href={offer.ctaHref}
-          className="tracking-label group/cta mt-6 inline-flex items-center gap-2 text-[11px] uppercase text-glass-flame transition-all hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-flame focus-visible:ring-offset-4 focus-visible:ring-offset-glass-ink"
+          className="tracking-label group/cta mt-6 inline-flex items-center gap-2 text-[11px] uppercase text-glass-rose transition-all hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-ink"
         >
           {ctaLabel}
           <ArrowRight size={14} aria-hidden="true" />

@@ -28,7 +28,7 @@ export function LanguageSwitch({ className }: { className?: string }) {
             onClick={() => setLocale(l)}
             aria-pressed={locale === l}
             className={cn(
-              "transition-colors hover:text-glass-flame focus-visible:text-glass-flame focus-visible:outline-none",
+              "transition-colors hover:text-glass-rose focus-visible:text-glass-rose focus-visible:outline-none",
               locale === l ? "text-glass-white" : "text-glass-mute",
             )}
           >

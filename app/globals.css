@@ -7,15 +7,16 @@
  * ================================================================= */
 
 @theme {
-  /* === Palette Glass — §3.1 BRIEF (8 vars exactes, intouchables) === */
+  /* === Palette Glass — palette définitive après FIX C (purge orange) === */
   --glass-black: #0a0a0a;
   --glass-ink: #141414;
   --glass-white: #ffffff;
   --glass-mute: #8a8a8a;
-  --glass-flame: #f2501f;
+  /* Accents rose remplaçant le flame d'origine §3.1 BRIEF */
+  --glass-rose: #f77ca0;
+  --glass-rose-deep: #c76088;
   --glass-burgundy: #641707;
   --glass-blood: #8b0404;
-  --glass-rose: #f77ca0;
 
   /* === Tokens shadcn remappés sur la palette Glass === */
   /* Base / surfaces */
@@ -26,9 +27,9 @@
   --color-popover: var(--glass-ink);
   --color-popover-foreground: var(--glass-white);
 
-  /* CTA primaire — réservé au flame (§3.1 règle stricte) */
-  --color-primary: var(--glass-flame);
-  --color-primary-foreground: var(--glass-white);
+  /* CTA primaire — rose (FIX C : purge orange) */
+  --color-primary: var(--glass-rose);
+  --color-primary-foreground: var(--glass-black);
 
   /* Secondaire / muted / accent */
   --color-secondary: var(--glass-ink);
@@ -45,19 +46,19 @@
   /* Bordures, inputs, focus ring */
   --color-border: rgb(255 255 255 / 0.1);
   --color-input: rgb(255 255 255 / 0.12);
-  --color-ring: var(--glass-flame);
+  --color-ring: var(--glass-blood);
 
   /* === Couleurs Glass exposées comme utilities Tailwind ===
-   * → bg-glass-flame, text-glass-mute, border-glass-burgundy, etc.
-   * Les vars brutes --glass-* restent dispo via var(--glass-flame). */
+   * → bg-glass-rose, text-glass-mute, border-glass-burgundy, etc.
+   * Les vars brutes --glass-* restent dispo via var(--glass-rose). */
   --color-glass-black: var(--glass-black);
   --color-glass-ink: var(--glass-ink);
   --color-glass-white: var(--glass-white);
   --color-glass-mute: var(--glass-mute);
-  --color-glass-flame: var(--glass-flame);
+  --color-glass-rose: var(--glass-rose);
+  --color-glass-rose-deep: var(--glass-rose-deep);
   --color-glass-burgundy: var(--glass-burgundy);
   --color-glass-blood: var(--glass-blood);
-  --color-glass-rose: var(--glass-rose);
 
   /* === Typographies — §3.2 BRIEF ===
    * next/font expose --font-fraunces et --font-inter sur <html>.
@@ -98,8 +99,8 @@
   }
 
   ::selection {
-    background-color: var(--glass-flame);
-    color: var(--glass-white);
+    background-color: var(--glass-rose);
+    color: var(--glass-black);
   }
 
   /* §6 — header sticky : offset les ancres au scroll (R11) */

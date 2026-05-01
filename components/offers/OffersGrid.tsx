@@ -15,7 +15,7 @@ export function OffersGrid() {
     >
       <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-28">
         <header className="mb-12 max-w-3xl md:mb-16">
-          <p className="tracking-label text-[11px] uppercase text-glass-flame">
+          <p className="tracking-label text-[11px] uppercase text-glass-rose">
             {dictionary.offers.eyebrow}
           </p>
           <h2

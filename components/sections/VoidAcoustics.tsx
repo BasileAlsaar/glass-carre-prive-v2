@@ -44,7 +44,7 @@ export function VoidAcoustics() {
           transition={{ duration: 0.8, delay: 0.12, ease: EASE }}
           className="md:col-span-7 md:order-2"
         >
-          <p className="tracking-label text-[11px] uppercase text-glass-flame">{t.eyebrow}</p>
+          <p className="tracking-label text-[11px] uppercase text-glass-rose">{t.eyebrow}</p>
           <h2
             id="void-title"
             className="font-display tracking-display mt-3 text-balance text-3xl uppercase leading-[1.05] text-glass-white md:text-5xl lg:text-6xl"

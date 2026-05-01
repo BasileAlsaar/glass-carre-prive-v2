@@ -32,7 +32,7 @@ export function Gallery() {
     >
       <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-28">
         <header className="mb-12 max-w-2xl md:mb-16">
-          <p className="tracking-label text-[11px] uppercase text-glass-flame">{t.eyebrow}</p>
+          <p className="tracking-label text-[11px] uppercase text-glass-rose">{t.eyebrow}</p>
           <h2
             id="gallery-title"
             className="font-display tracking-display mt-3 text-3xl text-glass-white md:text-5xl"

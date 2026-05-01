@@ -25,10 +25,10 @@ const NAV_LINKS = [
 ] as const;
 
 const PRIMARY_CTA_BASE =
-  "tracking-label inline-flex items-center gap-2 bg-glass-flame px-5 text-[11px] font-medium uppercase text-glass-white transition-all hover:gap-3 hover:bg-glass-burgundy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-flame focus-visible:ring-offset-2 focus-visible:ring-offset-glass-black";
+  "tracking-label inline-flex items-center gap-2 bg-glass-rose px-5 text-[11px] font-medium uppercase text-glass-black transition-all hover:gap-3 hover:bg-glass-burgundy hover:text-glass-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-2 focus-visible:ring-offset-glass-black";
 
 const OUTLINE_CTA_BASE =
-  "tracking-label inline-flex items-center justify-center border border-glass-flame px-5 text-[11px] font-medium uppercase text-glass-flame transition-colors hover:bg-glass-flame hover:text-glass-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-flame focus-visible:ring-offset-2 focus-visible:ring-offset-glass-black";
+  "tracking-label inline-flex items-center justify-center border border-glass-rose px-5 text-[11px] font-medium uppercase text-glass-rose transition-colors hover:bg-glass-rose hover:text-glass-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-2 focus-visible:ring-offset-glass-black";
 
 export function StickyHeader() {
   const { dictionary } = useLocale();
@@ -60,7 +60,7 @@ export function StickyHeader() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-glass-white/80 transition-colors hover:text-glass-flame focus-visible:text-glass-flame focus-visible:outline-none"
+                  className="text-glass-white/80 transition-colors hover:text-glass-rose focus-visible:text-glass-rose focus-visible:outline-none"
                 >
                   {dictionary.nav[link.labelKey]}
                 </a>
@@ -88,7 +88,7 @@ export function StickyHeader() {
               <button
                 type="button"
                 aria-label="Ouvrir le menu"
-                className="inline-flex h-10 w-10 items-center justify-center text-glass-white transition-colors hover:text-glass-flame focus-visible:text-glass-flame focus-visible:outline-none md:hidden"
+                className="inline-flex h-10 w-10 items-center justify-center text-glass-white transition-colors hover:text-glass-rose focus-visible:text-glass-rose focus-visible:outline-none md:hidden"
               >
                 <Menu size={22} aria-hidden="true" />
               </button>
@@ -109,7 +109,7 @@ export function StickyHeader() {
                       <a
                         href={link.href}
                         onClick={() => setOpen(false)}
-                        className="tracking-label block text-sm uppercase text-glass-white transition-colors hover:text-glass-flame"
+                        className="tracking-label block text-sm uppercase text-glass-white transition-colors hover:text-glass-rose"
                       >
                         {dictionary.nav[link.labelKey]}
                       </a>

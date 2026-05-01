@@ -63,9 +63,9 @@ export function FloatingCTA() {
           }
           style={{ originX: 0.5, originY: 0.5 }}
           className={cn(
-            "fixed z-40 inline-flex items-center justify-center bg-glass-flame text-glass-white transition-colors",
+            "fixed z-40 inline-flex items-center justify-center bg-glass-rose text-glass-black transition-colors",
             "tracking-label gap-2 text-xs font-medium uppercase",
-            "hover:bg-glass-burgundy",
+            "hover:bg-glass-burgundy hover:text-glass-white",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-white focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black",
             // Mobile : pill plein-largeur 56px
             "inset-x-4 bottom-4 h-14 px-5",

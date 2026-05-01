@@ -67,14 +67,14 @@ export function Footer() {
 
           {/* Contact §4.5 */}
           <div className="md:col-span-4">
-            <p className="tracking-label text-[11px] uppercase text-glass-flame">
+            <p className="tracking-label text-[11px] uppercase text-glass-rose">
               {t.contactLabel}
             </p>
             <ul className="mt-5 space-y-3 text-sm">
               <li>
                 <a
                   href={PHONE_TEL}
-                  className="inline-flex items-center gap-3 text-glass-white transition-colors hover:text-glass-flame"
+                  className="inline-flex items-center gap-3 text-glass-white transition-colors hover:text-glass-rose"
                 >
                   <Phone size={14} aria-hidden="true" /> {PHONE}
                 </a>
@@ -82,7 +82,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="inline-flex items-center gap-3 text-glass-white transition-colors hover:text-glass-flame"
+                  className="inline-flex items-center gap-3 text-glass-white transition-colors hover:text-glass-rose"
                 >
                   <Mail size={14} aria-hidden="true" /> {EMAIL}
                 </a>
@@ -96,7 +96,7 @@ export function Footer() {
 
           {/* Réseaux + horaires */}
           <div className="md:col-span-4">
-            <p className="tracking-label text-[11px] uppercase text-glass-flame">
+            <p className="tracking-label text-[11px] uppercase text-glass-rose">
               {t.socialLabel}
             </p>
             <ul className="mt-5 grid grid-cols-2 gap-3 text-sm">
@@ -105,7 +105,7 @@ export function Footer() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-glass-white transition-colors hover:text-glass-flame"
+                  className="inline-flex items-center gap-2 text-glass-white transition-colors hover:text-glass-rose"
                 >
                   <MessageCircle size={14} aria-hidden="true" /> {t.links.whatsapp}
                 </a>
@@ -115,7 +115,7 @@ export function Footer() {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-glass-white transition-colors hover:text-glass-flame"
+                  className="inline-flex items-center gap-2 text-glass-white transition-colors hover:text-glass-rose"
                 >
                   <Instagram size={14} aria-hidden="true" /> {t.links.instagram}
                 </a>
@@ -125,7 +125,7 @@ export function Footer() {
                   href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-glass-white transition-colors hover:text-glass-flame"
+                  className="inline-flex items-center gap-2 text-glass-white transition-colors hover:text-glass-rose"
                 >
                   <Linkedin size={14} aria-hidden="true" /> {t.links.linkedin}
                 </a>
@@ -135,13 +135,13 @@ export function Footer() {
                   href={FACEBOOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-glass-white transition-colors hover:text-glass-flame"
+                  className="inline-flex items-center gap-2 text-glass-white transition-colors hover:text-glass-rose"
                 >
                   <Facebook size={14} aria-hidden="true" /> {t.links.facebook}
                 </a>
               </li>
             </ul>
-            <p className="tracking-label mt-8 text-[11px] uppercase text-glass-flame">
+            <p className="tracking-label mt-8 text-[11px] uppercase text-glass-rose">
               {t.hoursLabel}
             </p>
             <p className="mt-3 text-sm text-glass-white">{t.hoursShort}</p>
@@ -155,12 +155,12 @@ export function Footer() {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <a
                 href="#"
-                className="tracking-label uppercase transition-colors hover:text-glass-flame"
+                className="tracking-label uppercase transition-colors hover:text-glass-rose"
               >
                 {t.legalLabel}
               </a>
               <details className="group">
-                <summary className="tracking-label cursor-pointer list-none uppercase transition-colors hover:text-glass-flame">
+                <summary className="tracking-label cursor-pointer list-none uppercase transition-colors hover:text-glass-rose">
                   {t.creditsLabel}
                 </summary>
                 <p className="mt-3 max-w-md text-[10px] leading-relaxed text-glass-mute/70">

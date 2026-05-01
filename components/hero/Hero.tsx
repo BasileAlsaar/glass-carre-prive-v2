@@ -75,7 +75,7 @@ export function Hero() {
         >
           <a
             href="#contact-form"
-            className="tracking-label group inline-flex h-12 items-center gap-2 bg-glass-flame px-7 text-xs font-medium uppercase text-glass-white transition-all hover:bg-glass-burgundy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-flame focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black"
+            className="tracking-label group inline-flex h-12 items-center gap-2 bg-glass-rose px-7 text-xs font-medium uppercase text-glass-black transition-all hover:bg-glass-burgundy hover:text-glass-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black"
           >
             {dictionary.cta.privatizeFull}
             <ArrowRight
@@ -88,7 +88,7 @@ export function Hero() {
             trigger={
               <button
                 type="button"
-                className="tracking-label inline-flex h-12 items-center justify-center border border-glass-flame px-7 text-xs font-medium uppercase text-glass-flame transition-colors hover:bg-glass-flame hover:text-glass-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-flame focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black"
+                className="tracking-label inline-flex h-12 items-center justify-center border border-glass-rose px-7 text-xs font-medium uppercase text-glass-rose transition-colors hover:bg-glass-rose hover:text-glass-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black"
               >
                 {dictionary.cta.bookTable}
               </button>

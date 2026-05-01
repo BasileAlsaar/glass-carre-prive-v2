@@ -26,7 +26,7 @@ export function About() {
           transition={{ duration: 0.8, ease: EASE }}
           className="md:col-span-7 lg:col-span-6 lg:col-start-1"
         >
-          <p className="tracking-label text-[11px] uppercase text-glass-flame">{t.eyebrow}</p>
+          <p className="tracking-label text-[11px] uppercase text-glass-rose">{t.eyebrow}</p>
           <h2
             id="about-title"
             className="font-display tracking-display mt-3 text-3xl text-glass-white md:text-5xl"
@@ -46,7 +46,7 @@ export function About() {
           <p className="mt-8 max-w-xl text-base leading-relaxed text-glass-white/80">{t.body}</p>
           <a
             href="#privatisations"
-            className="tracking-label group mt-8 inline-flex items-center gap-2 text-[11px] uppercase text-glass-flame transition-all hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-flame focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black"
+            className="tracking-label group mt-8 inline-flex items-center gap-2 text-[11px] uppercase text-glass-rose transition-all hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black"
           >
             {t.seeOffers}
             <ArrowRight size={14} aria-hidden="true" />

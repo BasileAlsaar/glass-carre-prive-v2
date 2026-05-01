@@ -114,9 +114,9 @@ export function ReservationDialog({ trigger }: { trigger: React.ReactNode }) {
         {status === "success" ? (
           <div
             role="status"
-            className="flex flex-col items-start gap-3 border border-glass-flame/40 bg-glass-flame/5 p-6"
+            className="flex flex-col items-start gap-3 border border-glass-rose/40 bg-glass-rose/5 p-6"
           >
-            <CheckCircle2 size={24} className="text-glass-flame" aria-hidden="true" />
+            <CheckCircle2 size={24} className="text-glass-rose" aria-hidden="true" />
             <h3 className="font-display text-lg text-glass-white">{t.successTitle}</h3>
             <p className="text-sm text-glass-mute">{t.successDescription}</p>
           </div>
@@ -199,8 +199,8 @@ export function ReservationDialog({ trigger }: { trigger: React.ReactNode }) {
               type="submit"
               disabled={status === "submitting"}
               className={cn(
-                "tracking-label mt-2 inline-flex h-11 items-center justify-center gap-2 bg-glass-flame px-6 text-[11px] font-medium uppercase text-glass-white transition-all hover:bg-glass-burgundy disabled:opacity-60",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-flame focus-visible:ring-offset-4 focus-visible:ring-offset-glass-ink",
+                "tracking-label mt-2 inline-flex h-11 items-center justify-center gap-2 bg-glass-rose px-6 text-[11px] font-medium uppercase text-glass-black transition-all hover:bg-glass-burgundy hover:text-glass-white disabled:opacity-60",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-ink",
               )}
             >
               {status === "submitting" ? t.submitting : t.submitButton}
@@ -223,7 +223,7 @@ export function ReservationDialog({ trigger }: { trigger: React.ReactNode }) {
                 <li>
                   <a
                     href="tel:+33651662145"
-                    className="inline-flex items-center gap-1.5 transition-colors hover:text-glass-flame"
+                    className="inline-flex items-center gap-1.5 transition-colors hover:text-glass-rose"
                   >
                     <Phone size={12} aria-hidden="true" /> +33 6 51 66 21 45
                   </a>
@@ -233,7 +233,7 @@ export function ReservationDialog({ trigger }: { trigger: React.ReactNode }) {
                     href="https://wa.me/33651662145"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 transition-colors hover:text-glass-flame"
+                    className="inline-flex items-center gap-1.5 transition-colors hover:text-glass-rose"
                   >
                     <MessageCircle size={12} aria-hidden="true" /> WhatsApp
                   </a>
@@ -241,7 +241,7 @@ export function ReservationDialog({ trigger }: { trigger: React.ReactNode }) {
                 <li>
                   <a
                     href={`mailto:${TARGET_EMAIL}`}
-                    className="inline-flex items-center gap-1.5 transition-colors hover:text-glass-flame"
+                    className="inline-flex items-center gap-1.5 transition-colors hover:text-glass-rose"
                   >
                     <Mail size={12} aria-hidden="true" /> {TARGET_EMAIL}
                   </a>
@@ -271,7 +271,7 @@ function Field({
       <Label htmlFor={id} className="tracking-label text-[10px] uppercase text-glass-mute">
         {label}
         {required && (
-          <span aria-hidden="true" className="ml-1 text-glass-flame">
+          <span aria-hidden="true" className="ml-1 text-glass-rose">
             *
           </span>
         )}

@@ -112,10 +112,10 @@ export function ContactForm() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
-          className="flex flex-col items-start gap-4 border border-glass-flame/40 bg-glass-flame/5 p-8"
+          className="flex flex-col items-start gap-4 border border-glass-rose/40 bg-glass-rose/5 p-8"
           role="status"
         >
-          <CheckCircle2 size={32} className="text-glass-flame" aria-hidden="true" />
+          <CheckCircle2 size={32} className="text-glass-rose" aria-hidden="true" />
           <h3 className="font-display tracking-display text-2xl text-glass-white">
             {t.successTitle}
           </h3>
@@ -228,7 +228,7 @@ export function ContactForm() {
             type="submit"
             disabled={status === "submitting"}
             className={cn(
-              "tracking-label inline-flex h-12 items-center gap-2 bg-glass-flame px-7 text-xs font-medium uppercase text-glass-white transition-all hover:bg-glass-burgundy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-flame focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black disabled:opacity-60",
+              "tracking-label inline-flex h-12 items-center gap-2 bg-glass-rose px-7 text-xs font-medium uppercase text-glass-black transition-all hover:bg-glass-burgundy hover:text-glass-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black disabled:opacity-60",
             )}
           >
             {status === "submitting" ? t.submitting : t.submitButton}
@@ -273,7 +273,7 @@ function ContactShell({
     >
       <div className="mx-auto max-w-[1100px] px-6 py-20 md:px-10 md:py-28">
         <header className="mb-10 max-w-2xl md:mb-14">
-          <p className="tracking-label text-[11px] uppercase text-glass-flame">{eyebrow}</p>
+          <p className="tracking-label text-[11px] uppercase text-glass-rose">{eyebrow}</p>
           <h2
             id="contact-title"
             className="font-display tracking-display mt-3 text-3xl text-glass-white md:text-5xl"
@@ -305,7 +305,7 @@ function Field({
     <div className="flex flex-col gap-2">
       <Label htmlFor={id} className="tracking-label text-[11px] uppercase text-glass-mute">
         {label}
-        {required && <span aria-hidden="true" className="ml-1 text-glass-flame">*</span>}
+        {required && <span aria-hidden="true" className="ml-1 text-glass-rose">*</span>}
       </Label>
       {children}
     </div>

@@ -29,7 +29,7 @@ export function PracticalInfo() {
           transition={{ duration: 0.7, ease: EASE }}
           className="mb-12 max-w-2xl md:mb-16"
         >
-          <p className="tracking-label text-[11px] uppercase text-glass-flame">{t.eyebrow}</p>
+          <p className="tracking-label text-[11px] uppercase text-glass-rose">{t.eyebrow}</p>
           <h2
             id="practical-title"
             className="font-display tracking-display mt-3 text-3xl text-glass-white md:text-5xl"
@@ -83,7 +83,7 @@ export function PracticalInfo() {
                 className="absolute inset-0 bg-gradient-to-t from-glass-black/90 via-glass-black/40 to-transparent"
               />
               <div className="absolute inset-0 flex flex-col justify-end gap-4 p-6">
-                <p className="tracking-label text-[10px] uppercase text-glass-flame">
+                <p className="tracking-label text-[10px] uppercase text-glass-rose">
                   {t.addressLabel}
                 </p>
                 <p className="font-display text-xl text-glass-white">{t.address}</p>
@@ -91,7 +91,7 @@ export function PracticalInfo() {
                   href={MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="tracking-label group inline-flex items-center gap-2 text-[11px] uppercase text-glass-flame transition-all hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-flame focus-visible:ring-offset-4 focus-visible:ring-offset-glass-ink"
+                  className="tracking-label group inline-flex items-center gap-2 text-[11px] uppercase text-glass-rose transition-all hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-ink"
                 >
                   <MapPin size={14} aria-hidden="true" />
                   {t.viewMap}
