@@ -24,9 +24,9 @@ function buildNavLinks(locale: "fr" | "en"): readonly NavLink[] {
   return [
     { href: "/#formule-privatisation-seche", labelKey: "privatization" },
     { href: `/${locale}/carte`, labelKey: "menu" },
-    { href: "/#events", labelKey: "events" },
-    { href: "#membership", labelKey: "membership" },
-    { href: "#blog", labelKey: "blog" },
+    { href: `/${locale}/events`, labelKey: "events" },
+    { href: `/${locale}/membership`, labelKey: "membership" },
+    { href: `/${locale}/blog`, labelKey: "blog" },
     { href: "/#lieu", labelKey: "about" },
   ];
 }
