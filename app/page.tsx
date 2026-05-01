@@ -1,6 +1,7 @@
 import { StickyHeader } from "@/components/header/StickyHeader";
 import { Hero } from "@/components/hero/Hero";
 import { OffersGrid } from "@/components/offers/OffersGrid";
+import { FloatingCTA } from "@/components/cta/FloatingCTA";
 import { About } from "@/components/sections/About";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Footer } from "@/components/sections/Footer";
@@ -22,6 +23,7 @@ export default function Page() {
         <ContactForm />
       </main>
       <Footer />
+      <FloatingCTA />
     </>
   );
 }
