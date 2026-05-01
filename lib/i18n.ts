@@ -53,6 +53,14 @@ export type Dictionary = {
     seeOffers: string;
     imageAlt: string;
   };
+  void: {
+    eyebrow: string;
+    /** Headline §4.2 INTOUCHABLE. */
+    title: string;
+    /** Body §4.2 INTOUCHABLE. */
+    body: string;
+    imageAlt: string;
+  };
 };
 
 const FR: Dictionary = {
@@ -93,6 +101,12 @@ const FR: Dictionary = {
     seeOffers: "Voir les formules",
     imageAlt: "Comptoir du Glass Club, lumière feutrée et matières miroirs",
   },
+  void: {
+    eyebrow: "VOID ACOUSTICS",
+    title: "Le Glass — là où le son devient sensation.",
+    body: "Au Glass, chaque note résonne avec élégance grâce à notre système audio signé Void Acoustics. Véritable référence dans le monde du son haut de gamme, Void allie design audacieux et précision sonore pour offrir une immersion totale à nos clients.",
+    imageAlt: "Vinyl en lecture, gros plan sur les sillons",
+  },
 };
 
 const EN: Dictionary = {
@@ -132,6 +146,12 @@ const EN: Dictionary = {
     chips: ["Carré d'Or", "Renovated in 2025", "VOID Acoustics"],
     seeOffers: "See packages",
     imageAlt: "Glass Club bar counter, dim lighting and mirror surfaces",
+  },
+  void: {
+    eyebrow: "VOID ACOUSTICS",
+    title: "Glass — where sound becomes a feeling.",
+    body: "At Glass, every note resonates with elegance, courtesy of our Void Acoustics sound system. A reference in high-end audio, Void combines bold design and sonic precision to deliver total immersion.",
+    imageAlt: "Vinyl record close-up, light caught in the grooves",
   },
 };
 
