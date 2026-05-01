@@ -66,6 +66,17 @@ export type Dictionary = {
     title: string;
     lede: string;
   };
+  practical: {
+    eyebrow: string;
+    title: string;
+    /** Liste §4.4 INTOUCHABLE — labels et values FR. */
+    features: ReadonlyArray<{ label: string; value: string }>;
+    addressLabel: string;
+    address: string;
+    viewMap: string;
+    /** §4.6 INTOUCHABLE — schedule complet. */
+    schedule: string;
+  };
 };
 
 const FR: Dictionary = {
@@ -117,6 +128,28 @@ const FR: Dictionary = {
     title: "Une nuit, vue de l'intérieur.",
     lede: "Quelques aperçus du Glass — matières, lumière, ambiance.",
   },
+  practical: {
+    eyebrow: "INFOS PRATIQUES",
+    title: "Tout est prêt.",
+    features: [
+      { label: "Capacité", value: "jusqu'à 80 pax" },
+      {
+        label: "Accès",
+        value: "3 min à pied du Palais des Festivals, 1 min de la Croisette",
+      },
+      { label: "Terrasse", value: "30 personnes (jusqu'à 2h30 du matin)" },
+      { label: "Branding", value: "possible" },
+      { label: "Horaire", value: "17h–05h, 7/7" },
+      { label: "Classement", value: "ERP Type P" },
+      { label: "Son", value: "système VOID Acoustics" },
+      { label: "Bilan 2025", value: "104 événements dont 11 privatisations" },
+    ],
+    addressLabel: "Adresse",
+    address: "6 rue des Frères Pradignac, 06400 Cannes",
+    viewMap: "Voir sur Google Maps",
+    schedule:
+      "Ouvert du jeudi au samedi de 00h à 07h. Ouvert tous les jours pendant les grands congrès : MIPIM, MIPCOM, Cannes Lions, MAPIC, ILTM, TFWA, MIDEM, Festival de Cannes.",
+  },
 };
 
 const EN: Dictionary = {
@@ -167,6 +200,28 @@ const EN: Dictionary = {
     eyebrow: "GALLERY",
     title: "A night, from the inside.",
     lede: "A few glimpses of Glass — materials, light, atmosphere.",
+  },
+  practical: {
+    eyebrow: "VENUE FACTS",
+    title: "Everything is set.",
+    features: [
+      { label: "Capacity", value: "up to 80 pax" },
+      {
+        label: "Access",
+        value: "3 min walk from the Palais des Festivals, 1 min from the Croisette",
+      },
+      { label: "Terrace", value: "30 people (open until 2:30 AM)" },
+      { label: "Branding", value: "available" },
+      { label: "Hours", value: "5pm–5am, 7/7" },
+      { label: "Classification", value: "ERP Type P" },
+      { label: "Sound", value: "VOID Acoustics system" },
+      { label: "2025 track record", value: "104 events including 11 privatizations" },
+    ],
+    addressLabel: "Address",
+    address: "6 rue des Frères Pradignac, 06400 Cannes",
+    viewMap: "View on Google Maps",
+    schedule:
+      "Open Thursday to Saturday from 12 AM to 7 AM. Open every day during major congresses such as: MIPIM, MIPCOM, Cannes Lions, MAPIC, ILTM, TFWA, MIDEM, Festival de Cannes.",
   },
 };
 
