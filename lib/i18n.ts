@@ -141,6 +141,53 @@ export type Dictionary = {
   alts: {
     practicalCannes: string;
   };
+  events: {
+    title: string;
+    subtitle: string;
+    /** Tagline d'accueil — verbatim glasscannes.com/events-1 (FR traduit fidèle). */
+    intro: string;
+    emptyTitle: string;
+    emptyMessage: string;
+    statusUpcoming: string;
+    statusSoldOut: string;
+    statusReplay: string;
+    statusCancelled: string;
+    ctaBooking: string;
+    ctaInfo: string;
+    ctaInstagram: string;
+    ctaShotgun: string;
+  };
+  membership: {
+    title: string;
+    eyebrow: string;
+    subtitle: string;
+    /** Body verbatim glasscannes.com/membership. */
+    body: string;
+    cta: string;
+    pageLabel: string;
+  };
+  blog: {
+    title: string;
+    subtitle: string;
+    emptyMessage: string;
+    backToList: string;
+    readMore: string;
+    minRead: string;
+    pageLabel: string;
+    listLabel: string;
+    relatedTitle: string;
+    publishedOn: string;
+    by: string;
+    categories: {
+      coulisses: string;
+      cocktails: string;
+      cannes: string;
+      lifestyle: string;
+      mixology: string;
+      interview: string;
+      clubNews: string;
+    };
+  };
   menu: {
     title: string;
     subtitle: string;
@@ -339,6 +386,54 @@ const FR: Dictionary = {
   alts: {
     practicalCannes: "Vieux Port de Cannes la nuit, reflets sur l'eau",
   },
+  events: {
+    title: "Événements",
+    subtitle: "Programmation Glass Club",
+    intro:
+      "Des sélecteurs internationaux aux étoiles montantes underground, chaque semaine au Glass est soigneusement programmée pour faire vivre le dancefloor. Découvrez les prochaines nuits. Choisissez votre ambiance. Venez.",
+    emptyTitle: "Programmation à venir",
+    emptyMessage:
+      "Suivez-nous sur Instagram pour les annonces, ou retrouvez-nous sur Shotgun pour les billetteries.",
+    statusUpcoming: "À venir",
+    statusSoldOut: "Complet",
+    statusReplay: "Replay",
+    statusCancelled: "Annulé",
+    ctaBooking: "Réserver",
+    ctaInfo: "Plus d'infos",
+    ctaInstagram: "Instagram @glass_club_cannes",
+    ctaShotgun: "Voir sur Shotgun",
+  },
+  membership: {
+    title: "Membership",
+    eyebrow: "GLASS CLUB · CARRÉ D'OR",
+    subtitle: "Rejoignez le cercle Glass Club",
+    body: "Être membre du Glass, c'est vivre Cannes autrement. Une carte, des avantages exclusifs, et une place au cœur de la fête. Un cercle d'initiés pour célébrer, rencontrer, partager — pendant les festivals comme toute l'année.",
+    cta: "Demander des informations",
+    pageLabel: "Membership Glass Club",
+  },
+  blog: {
+    title: "Le Journal",
+    subtitle: "Lifestyle · Mixologie · Cannes",
+    emptyMessage:
+      "Le journal du Glass Club arrive bientôt. Mixologie, interviews, lifestyle Cannes.",
+    backToList: "Retour aux articles",
+    readMore: "Lire l'article",
+    minRead: "min de lecture",
+    pageLabel: "Le journal du Glass Club",
+    listLabel: "Liste des articles",
+    relatedTitle: "À lire aussi",
+    publishedOn: "Publié le",
+    by: "par",
+    categories: {
+      coulisses: "Coulisses",
+      cocktails: "Cocktails",
+      cannes: "Cannes",
+      lifestyle: "Lifestyle",
+      mixology: "Mixologie",
+      interview: "Interview",
+      clubNews: "Actualités",
+    },
+  },
   menu: {
     title: "La Carte",
     subtitle: "Glass Club · Carré d'Or · Cannes",
@@ -536,6 +631,54 @@ const EN: Dictionary = {
   },
   alts: {
     practicalCannes: "Old Port of Cannes at night, lights reflected on the water",
+  },
+  events: {
+    title: "Events",
+    subtitle: "Glass Club programming",
+    intro:
+      "From international selectors to the underground rising stars, each week at the Glass is carefully curated to keep the floor alive. Check out the next nights. Pick your vibe. Show up.",
+    emptyTitle: "Programming coming soon",
+    emptyMessage:
+      "Follow us on Instagram for announcements, or find us on Shotgun for tickets.",
+    statusUpcoming: "Upcoming",
+    statusSoldOut: "Sold Out",
+    statusReplay: "Replay",
+    statusCancelled: "Cancelled",
+    ctaBooking: "Book",
+    ctaInfo: "More info",
+    ctaInstagram: "Instagram @glass_club_cannes",
+    ctaShotgun: "View on Shotgun",
+  },
+  membership: {
+    title: "Membership",
+    eyebrow: "GLASS CLUB · CARRÉ D'OR",
+    subtitle: "Join the Glass Club inner circle",
+    body: "Being a Glass member means experiencing Cannes differently. A card, exclusive perks, and a seat at the heart of the celebration. An insiders' circle to celebrate, meet, share — during the festivals and all year round.",
+    cta: "Request more information",
+    pageLabel: "Glass Club membership",
+  },
+  blog: {
+    title: "The Journal",
+    subtitle: "Lifestyle · Mixology · Cannes",
+    emptyMessage:
+      "The Glass Club journal is coming soon. Mixology, interviews, Cannes lifestyle.",
+    backToList: "Back to articles",
+    readMore: "Read article",
+    minRead: "min read",
+    pageLabel: "Glass Club journal",
+    listLabel: "Articles list",
+    relatedTitle: "Also read",
+    publishedOn: "Published on",
+    by: "by",
+    categories: {
+      coulisses: "Behind the scenes",
+      cocktails: "Cocktails",
+      cannes: "Cannes",
+      lifestyle: "Lifestyle",
+      mixology: "Mixology",
+      interview: "Interview",
+      clubNews: "Club news",
+    },
   },
   menu: {
     title: "The Menu",
