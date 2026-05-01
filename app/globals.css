@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Tokens et @theme arrivent à l'étape 3 (DESIGN TOKENS). */
+
+html,
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+}
