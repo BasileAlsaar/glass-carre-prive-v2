@@ -38,3 +38,8 @@ Voir `.claude/BRIEF.md §12` et `docs/PLAN.md`.
 
 Toutes les photos proviennent de [Pexels](https://www.pexels.com/fr).
 Crédits photographes listés dans le footer du site.
+
+| Section | Photographe | URL |
+|---|---|---|
+| Hero | Gustavo Trotta | https://www.pexels.com/photo/14470108/ |
+

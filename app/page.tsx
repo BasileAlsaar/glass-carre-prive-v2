@@ -1,16 +1,18 @@
 import { StickyHeader } from "@/components/header/StickyHeader";
+import { Hero } from "@/components/hero/Hero";
 
 export default function Page() {
   return (
     <>
       <StickyHeader />
       <main id="top">
-        <section className="flex min-h-screen items-center justify-center bg-background px-6 pt-24 text-foreground">
+        <Hero />
+        <section className="flex min-h-[60vh] items-center justify-center bg-background px-6 py-24 text-foreground">
           <div className="text-center">
             <p className="tracking-label text-xs uppercase text-glass-mute">Glass Club · V2</p>
-            <h1 className="font-display tracking-display mt-4 text-4xl">Header en place.</h1>
+            <h2 className="font-display tracking-display mt-4 text-3xl">Hero en place.</h2>
             <p className="mt-2 text-sm text-glass-mute">
-              Hero à construire à l'étape suivante.
+              OffersGrid (§6 §2) à construire à l'étape suivante.
             </p>
           </div>
         </section>

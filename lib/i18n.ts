@@ -30,6 +30,13 @@ export type Dictionary = {
     privatizeFull: string;
     bookTable: string;
   };
+  hero: {
+    /** Tagline display sur 2 lignes (BRIEF §6, §6bis.2). */
+    taglineLine1: string;
+    taglineLine2: string;
+    /** Bandeau bas du hero — distance + horaires + 7/7. */
+    footnote: string;
+  };
 };
 
 const FR: Dictionary = {
@@ -50,6 +57,11 @@ const FR: Dictionary = {
     privatizeFull: "PRIVATISER VOTRE SOIRÉE",
     bookTable: "RÉSERVER UNE TABLE",
   },
+  hero: {
+    taglineLine1: "Bar-club privatisable",
+    taglineLine2: "au cœur du Carré d'Or",
+    footnote: "À 3 min du Palais des Festivals · 17h–05h · 7/7",
+  },
 };
 
 const EN: Dictionary = {
@@ -69,6 +81,11 @@ const EN: Dictionary = {
     book: "BOOK",
     privatizeFull: "PRIVATIZE YOUR EVENING",
     bookTable: "BOOK A TABLE",
+  },
+  hero: {
+    taglineLine1: "A bar-club for private hire",
+    taglineLine2: "in the heart of Cannes' Carré d'Or",
+    footnote: "3 min from the Palais des Festivals · 5pm–5am · 7/7",
   },
 };
 
