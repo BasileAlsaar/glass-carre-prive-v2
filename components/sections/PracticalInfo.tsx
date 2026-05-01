@@ -71,7 +71,7 @@ export function PracticalInfo() {
             <div className="relative aspect-[4/3] w-full overflow-hidden border border-white/10 bg-glass-black">
               <Image
                 src="/images/practical-cannes.jpg"
-                alt="Vieux Port de Cannes la nuit, lumières du quai"
+                alt={dictionary.alts.practicalCannes}
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 loading="lazy"

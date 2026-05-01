@@ -107,12 +107,34 @@ export type Dictionary = {
     legalLabel: string;
     creditsLabel: string;
     copyright: string;
+    tagline: string;
     links: {
       whatsapp: string;
       instagram: string;
       linkedin: string;
       facebook: string;
     };
+  };
+  reservation: {
+    description: string;
+    guestsLabel: string;
+    dateLabel: string;
+    slotLabel: string;
+    slotPlaceholder: string;
+    slotOptions: ReadonlyArray<{ value: string; label: string }>;
+    nameLabel: string;
+    emailLabel: string;
+    phoneLabel: string;
+    submitButton: string;
+    submitting: string;
+    successTitle: string;
+    successDescription: string;
+    errorMessage: string;
+    orContact: string;
+  };
+  /** Alt text utilitaires pour images factuelles. */
+  alts: {
+    practicalCannes: string;
   };
 };
 
@@ -225,12 +247,40 @@ const FR: Dictionary = {
     legalLabel: "Mentions légales",
     creditsLabel: "Crédits photo Pexels",
     copyright: "© 2026 Glass Club · Tous droits réservés.",
+    tagline: "Carré d'Or, Cannes — bar-club privatisable.",
     links: {
       whatsapp: "WhatsApp",
       instagram: "Instagram",
       linkedin: "LinkedIn",
       facebook: "Facebook",
     },
+  },
+  reservation: {
+    description:
+      "Réservez une table en quelques secondes. Caroline vous confirme sous 24h.",
+    guestsLabel: "Nb de personnes",
+    dateLabel: "Date",
+    slotLabel: "Créneau",
+    slotPlaceholder: "Sélectionner",
+    slotOptions: [
+      { value: "thursday", label: "Jeudi 00h–07h" },
+      { value: "friday", label: "Vendredi 00h–07h" },
+      { value: "saturday", label: "Samedi 00h–07h" },
+      { value: "special", label: "Événement spécial" },
+    ],
+    nameLabel: "Nom",
+    emailLabel: "Email",
+    phoneLabel: "Téléphone",
+    submitButton: "Envoyer la demande",
+    submitting: "Envoi…",
+    successTitle: "Demande envoyée.",
+    successDescription: "Caroline vous répondra sous 24h.",
+    errorMessage:
+      "Erreur d'envoi — réessayez ou écrivez à caroline@glasscannes.com.",
+    orContact: "Ou contactez-nous directement :",
+  },
+  alts: {
+    practicalCannes: "Vieux Port de Cannes la nuit, reflets sur l'eau",
   },
 };
 
@@ -343,12 +393,39 @@ const EN: Dictionary = {
     legalLabel: "Legal notice",
     creditsLabel: "Pexels photo credits",
     copyright: "© 2026 Glass Club · All rights reserved.",
+    tagline: "Carré d'Or, Cannes — a bar-club for private hire.",
     links: {
       whatsapp: "WhatsApp",
       instagram: "Instagram",
       linkedin: "LinkedIn",
       facebook: "Facebook",
     },
+  },
+  reservation: {
+    description: "Book a table in seconds. Caroline confirms within 24h.",
+    guestsLabel: "Party size",
+    dateLabel: "Date",
+    slotLabel: "Slot",
+    slotPlaceholder: "Select",
+    slotOptions: [
+      { value: "thursday", label: "Thursday 12am–7am" },
+      { value: "friday", label: "Friday 12am–7am" },
+      { value: "saturday", label: "Saturday 12am–7am" },
+      { value: "special", label: "Special event" },
+    ],
+    nameLabel: "Name",
+    emailLabel: "Email",
+    phoneLabel: "Phone",
+    submitButton: "Send request",
+    submitting: "Sending…",
+    successTitle: "Request sent.",
+    successDescription: "Caroline will get back to you within 24h.",
+    errorMessage:
+      "Sending error — try again or write to caroline@glasscannes.com.",
+    orContact: "Or reach out directly:",
+  },
+  alts: {
+    practicalCannes: "Old Port of Cannes at night, lights reflected on the water",
   },
 };
 

@@ -62,9 +62,7 @@ export function Footer() {
                 className="h-20 w-20"
               />
             </Link>
-            <p className="mt-4 max-w-xs text-sm text-glass-mute">
-              Carré d'Or, Cannes — bar-club privatisable.
-            </p>
+            <p className="mt-4 max-w-xs text-sm text-glass-mute">{t.tagline}</p>
           </div>
 
           {/* Contact §4.5 */}
