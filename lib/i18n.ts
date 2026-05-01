@@ -61,6 +61,11 @@ export type Dictionary = {
     body: string;
     imageAlt: string;
   };
+  gallery: {
+    eyebrow: string;
+    title: string;
+    lede: string;
+  };
 };
 
 const FR: Dictionary = {
@@ -107,6 +112,11 @@ const FR: Dictionary = {
     body: "Au Glass, chaque note résonne avec élégance grâce à notre système audio signé Void Acoustics. Véritable référence dans le monde du son haut de gamme, Void allie design audacieux et précision sonore pour offrir une immersion totale à nos clients.",
     imageAlt: "Vinyl en lecture, gros plan sur les sillons",
   },
+  gallery: {
+    eyebrow: "GALERIE",
+    title: "Une nuit, vue de l'intérieur.",
+    lede: "Quelques aperçus du Glass — matières, lumière, ambiance.",
+  },
 };
 
 const EN: Dictionary = {
@@ -152,6 +162,11 @@ const EN: Dictionary = {
     title: "Glass — where sound becomes a feeling.",
     body: "At Glass, every note resonates with elegance, courtesy of our Void Acoustics sound system. A reference in high-end audio, Void combines bold design and sonic precision to deliver total immersion.",
     imageAlt: "Vinyl record close-up, light caught in the grooves",
+  },
+  gallery: {
+    eyebrow: "GALLERY",
+    title: "A night, from the inside.",
+    lede: "A few glimpses of Glass — materials, light, atmosphere.",
   },
 };
 

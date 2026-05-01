@@ -42,4 +42,16 @@ Crédits photographes listés dans le footer du site.
 | Section | Photographe | URL |
 |---|---|---|
 | Hero | Gustavo Trotta | https://www.pexels.com/photo/14470108/ |
+| About / Le Lieu | konrads-photo | https://www.pexels.com/photo/14882031/ |
+| VOID Acoustics | Eva Bronzini | https://www.pexels.com/photo/7605653/ |
+| Galerie 1 | Jos Penaran | https://www.pexels.com/photo/22234333/ |
+| Galerie 2 | Vaibky | https://www.pexels.com/photo/237744/ |
+| Galerie 3 | Anna McDonald | https://www.pexels.com/photo/27409956/ |
+| Galerie 4 | Vovkapanda | https://www.pexels.com/photo/12628523/ |
+| Galerie 5 | Rafael Guajardo | https://www.pexels.com/photo/604671/ |
+| Galerie 6 | beratilgin | https://www.pexels.com/photo/17651216/ |
+| Galerie 7 | jibanesports | https://www.pexels.com/photo/4818319/ |
+| Galerie 8 | Carlo Giovanni Ghiardelli | https://www.pexels.com/photo/35294184/ |
+| Galerie 9 | Branimir Klaric | https://www.pexels.com/photo/9501874/ |
+| Practical / Cannes | Spolyakov | https://www.pexels.com/photo/16761844/ |
 
