@@ -26,21 +26,21 @@ export function Hero() {
       aria-labelledby="hero-tagline"
       className="relative isolate flex min-h-screen w-full items-center justify-center overflow-hidden bg-glass-black"
     >
-      {/* Photo nuit + overlay 65% (§6 + §6bis.2) */}
+      {/* Photo cocktail (asset client V1) + overlay 55% + dégradé radial bas */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/hero.jpg"
+          src="/images/hero-cocktail.jpg"
           alt=""
           fill
           priority
           quality={85}
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-[70%_center]"
         />
-        <div className="absolute inset-0 bg-glass-black/65" aria-hidden="true" />
+        <div className="absolute inset-0 bg-glass-black/55" aria-hidden="true" />
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-glass-black/80 to-transparent"
+          className="absolute inset-x-0 bottom-0 h-2/5 bg-[radial-gradient(ellipse_at_bottom,_var(--glass-black)_0%,_transparent_70%)]"
         />
       </div>
 
