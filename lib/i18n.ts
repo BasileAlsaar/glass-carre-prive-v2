@@ -44,6 +44,15 @@ export type Dictionary = {
     priceLabel: string;
     privatizeFormula: string;
   };
+  about: {
+    eyebrow: string;
+    title: string;
+    /** Copy §4.1 INTOUCHABLE. */
+    body: string;
+    chips: readonly string[];
+    seeOffers: string;
+    imageAlt: string;
+  };
 };
 
 const FR: Dictionary = {
@@ -76,6 +85,14 @@ const FR: Dictionary = {
     priceLabel: "Tarif",
     privatizeFormula: "Privatiser cette formule",
   },
+  about: {
+    eyebrow: "LE LIEU",
+    title: "Carré d'Or. Cannes.",
+    body: "Au cœur de Cannes, le Glass est un bar-club à taille humaine, pensé pour se retrouver et prolonger la nuit dans une atmosphère élégante et décontractée. Situé à seulement 3 minutes à pied du Palais des Festivals, à l'entrée de l'emblématique Carré d'Or, l'établissement bénéficie d'une localisation premium. Entièrement rénové en 2025, le lieu mêle des inspirations des années 70, des matières miroirs et des panneaux acoustiques lumineux, créant un décor immersif et immédiatement identifiable.",
+    chips: ["Carré d'Or", "Rénovation 2025", "VOID Acoustics"],
+    seeOffers: "Voir les formules",
+    imageAlt: "Comptoir du Glass Club, lumière feutrée et matières miroirs",
+  },
 };
 
 const EN: Dictionary = {
@@ -107,6 +124,14 @@ const EN: Dictionary = {
     lede: "From a corporate aperitivo to an all-inclusive night until 5am — pick the format that fits your event.",
     priceLabel: "From",
     privatizeFormula: "Privatize this package",
+  },
+  about: {
+    eyebrow: "THE VENUE",
+    title: "Carré d'Or. Cannes.",
+    body: "Located just 3 minutes from the Palais des Festivals, Glass Club is a cocktail bar and club in Cannes, ideal for private events, corporate events and venue privatization. Perfect for afterworks, corporate parties, brand launches, networking cocktails, birthdays and private parties, especially during major events such as MIPIM, Cannes Lions, MIPCOM, MAPIC, ILTM, TFWA and the Cannes Film Festival.",
+    chips: ["Carré d'Or", "Renovated in 2025", "VOID Acoustics"],
+    seeOffers: "See packages",
+    imageAlt: "Glass Club bar counter, dim lighting and mirror surfaces",
   },
 };
 
