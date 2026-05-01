@@ -37,6 +37,13 @@ export type Dictionary = {
     /** Bandeau bas du hero — distance + horaires + 7/7. */
     footnote: string;
   };
+  offers: {
+    eyebrow: string;
+    title: string;
+    lede: string;
+    priceLabel: string;
+    privatizeFormula: string;
+  };
 };
 
 const FR: Dictionary = {
@@ -62,6 +69,13 @@ const FR: Dictionary = {
     taglineLine2: "au cœur du Carré d'Or",
     footnote: "À 3 min du Palais des Festivals · 17h–05h · 7/7",
   },
+  offers: {
+    eyebrow: "FORMULES",
+    title: "Quatre formats de privatisation.",
+    lede: "De l'apéro corporate à l'all inclusive jusqu'à 5h, choisissez le format qui correspond à votre soirée.",
+    priceLabel: "Tarif",
+    privatizeFormula: "Privatiser cette formule",
+  },
 };
 
 const EN: Dictionary = {
@@ -86,6 +100,13 @@ const EN: Dictionary = {
     taglineLine1: "A bar-club for private hire",
     taglineLine2: "in the heart of Cannes' Carré d'Or",
     footnote: "3 min from the Palais des Festivals · 5pm–5am · 7/7",
+  },
+  offers: {
+    eyebrow: "PACKAGES",
+    title: "Four privatization formats.",
+    lede: "From a corporate aperitivo to an all-inclusive night until 5am — pick the format that fits your event.",
+    priceLabel: "From",
+    privatizeFormula: "Privatize this package",
   },
 };
 
