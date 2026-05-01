@@ -136,6 +136,24 @@ export type Dictionary = {
   alts: {
     practicalCannes: string;
   };
+  socialProof: {
+    eyebrow: string;
+    title: string;
+    trustedBy: string;
+    stats: ReadonlyArray<{
+      target: number;
+      decimals: number;
+      suffix: string;
+      label: string;
+    }>;
+    testimonials: ReadonlyArray<{
+      text: string;
+      name: string;
+      context: string;
+    }>;
+    /** Liste des congrès majeurs §4.1 + §4.6 BRIEF — intouchable. */
+    congresses: readonly string[];
+  };
 };
 
 const FR: Dictionary = {
@@ -282,6 +300,44 @@ const FR: Dictionary = {
   alts: {
     practicalCannes: "Vieux Port de Cannes la nuit, reflets sur l'eau",
   },
+  socialProof: {
+    eyebrow: "ILS EN PARLENT",
+    title: "Vu, vécu, recommandé.",
+    trustedBy: "ILS NOUS ONT FAIT CONFIANCE",
+    stats: [
+      { target: 4.9, decimals: 1, suffix: "/5", label: "Avis Google" },
+      { target: 104, decimals: 0, suffix: "", label: "Événements en 2025" },
+      { target: 11, decimals: 0, suffix: "", label: "Privatisations en 2025" },
+      { target: 8, decimals: 0, suffix: "", label: "Congrès majeurs" },
+    ],
+    testimonials: [
+      {
+        text: "Enfin un lieu à Cannes où on peut boire d'excellents cocktails et profiter d'une programmation DJ House pointue !",
+        name: "Max C.",
+        context: "Tripadvisor · août 2025",
+      },
+      {
+        text: "Nous avons passé une soirée magique au Glass. L'ambiance était festive mais élégante, la sélection musicale incroyable.",
+        name: "Jade A.",
+        context: "Tripadvisor · août 2025",
+      },
+      {
+        text: "Club très propre et bien aménagé. Accueil super et lieux agréables pour écouter de la musique sur vinyles.",
+        name: "Yannick B.",
+        context: "Tripadvisor · septembre 2025",
+      },
+    ],
+    congresses: [
+      "MIPIM",
+      "MIPCOM",
+      "Cannes Lions",
+      "MAPIC",
+      "ILTM",
+      "TFWA",
+      "MIDEM",
+      "Festival de Cannes",
+    ],
+  },
 };
 
 const EN: Dictionary = {
@@ -426,6 +482,44 @@ const EN: Dictionary = {
   },
   alts: {
     practicalCannes: "Old Port of Cannes at night, lights reflected on the water",
+  },
+  socialProof: {
+    eyebrow: "PEOPLE TALK",
+    title: "Seen, lived, recommended.",
+    trustedBy: "THEY TRUSTED US",
+    stats: [
+      { target: 4.9, decimals: 1, suffix: "/5", label: "Google rating" },
+      { target: 104, decimals: 0, suffix: "", label: "Events in 2025" },
+      { target: 11, decimals: 0, suffix: "", label: "Privatizations in 2025" },
+      { target: 8, decimals: 0, suffix: "", label: "Major congresses" },
+    ],
+    testimonials: [
+      {
+        text: "Finally, a place in Cannes where you can drink excellent cocktails and enjoy a sophisticated DJ House program!",
+        name: "Max C.",
+        context: "Tripadvisor · August 2025",
+      },
+      {
+        text: "We spent a magical evening at the Glass. Mood was festive but elegant, the musical selection incredible.",
+        name: "Jade A.",
+        context: "Tripadvisor · August 2025",
+      },
+      {
+        text: "Club very clean and well appointed. Super welcoming and nice places to listen to music on vinyl.",
+        name: "Yannick B.",
+        context: "Tripadvisor · September 2025",
+      },
+    ],
+    congresses: [
+      "MIPIM",
+      "MIPCOM",
+      "Cannes Lions",
+      "MAPIC",
+      "ILTM",
+      "TFWA",
+      "MIDEM",
+      "Festival de Cannes",
+    ],
   },
 };
 

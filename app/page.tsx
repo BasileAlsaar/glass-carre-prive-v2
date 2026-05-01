@@ -8,6 +8,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { Footer } from "@/components/sections/Footer";
 import { Gallery } from "@/components/sections/Gallery";
 import { PracticalInfo } from "@/components/sections/PracticalInfo";
+import { SocialProof } from "@/components/sections/SocialProof";
 import { VoidAcoustics } from "@/components/sections/VoidAcoustics";
 
 export default function Page() {
@@ -19,6 +20,7 @@ export default function Page() {
         <OffersGrid />
         <Marquee />
         <About />
+        <SocialProof />
         <VoidAcoustics />
         <Gallery />
         <Marquee />
