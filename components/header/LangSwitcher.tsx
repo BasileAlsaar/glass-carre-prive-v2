@@ -9,27 +9,37 @@ import { LOCALES, type Locale } from "@/lib/i18n";
 import { useLocale } from "@/lib/locale-context";
 import { cn } from "@/lib/utils";
 
-function Flag({ locale }: { locale: Locale }) {
-  if (locale === "fr") {
-    return (
-      <svg viewBox="0 0 3 2" width="22" height="15" aria-hidden="true" className="block">
-        <rect width="1" height="2" fill="#0055A4" />
-        <rect x="1" width="1" height="2" fill="#FFFFFF" />
-        <rect x="2" width="1" height="2" fill="#EF4135" />
-      </svg>
-    );
-  }
+function Flag({ locale, small = false }: { locale: Locale; small?: boolean }) {
+  const sizeClasses = small
+    ? "h-3 w-4"
+    : "h-3.5 w-5 md:h-4 md:w-6";
   return (
-    <svg viewBox="0 0 60 30" width="22" height="15" aria-hidden="true" className="block">
-      <clipPath id="uk-t">
-        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
-      </clipPath>
-      <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
-      <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#uk-t)" stroke="#C8102E" strokeWidth="4" />
-      <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
-      <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
-    </svg>
+    <span
+      aria-hidden="true"
+      className={cn(
+        "block overflow-hidden rounded-[2px] border border-glass-white/10",
+        sizeClasses,
+      )}
+    >
+      {locale === "fr" ? (
+        <svg viewBox="0 0 3 2" preserveAspectRatio="none" className="block h-full w-full">
+          <rect width="1" height="2" fill="#0055A4" />
+          <rect x="1" width="1" height="2" fill="#FFFFFF" />
+          <rect x="2" width="1" height="2" fill="#EF4135" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 60 30" preserveAspectRatio="none" className="block h-full w-full">
+          <clipPath id="uk-t">
+            <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+          </clipPath>
+          <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
+          <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#uk-t)" stroke="#C8102E" strokeWidth="4" />
+          <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
+          <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
+        </svg>
+      )}
+    </span>
   );
 }
 
@@ -73,13 +83,17 @@ export function LangSwitcher({ className }: { className?: string }) {
         aria-expanded={open}
         aria-label={`Langue actuelle : ${LOCALE_LABEL[locale]}`}
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex h-8 items-center gap-2 px-1.5 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-rose focus-visible:ring-offset-2 focus-visible:ring-offset-glass-black"
+        className="group/lang inline-flex h-8 items-center gap-x-1 px-1.5 transition-all duration-200 hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-rose focus-visible:ring-offset-2 focus-visible:ring-offset-glass-black"
       >
         <Flag locale={locale} />
         <ChevronDown
-          size={14}
+          size={12}
+          strokeWidth={2}
           aria-hidden="true"
-          className={cn("text-glass-white/70 transition-transform duration-200", open && "rotate-180")}
+          className={cn(
+            "text-glass-white/60 transition-all duration-200 group-hover/lang:text-glass-white/80",
+            open && "rotate-180",
+          )}
         />
       </button>
       <AnimatePresence>
@@ -104,7 +118,7 @@ export function LangSwitcher({ className }: { className?: string }) {
                     locale === l ? "text-glass-white" : "text-glass-mute",
                   )}
                 >
-                  <Flag locale={l} />
+                  <Flag locale={l} small />
                   <span>{l.toUpperCase()}</span>
                 </button>
               </li>

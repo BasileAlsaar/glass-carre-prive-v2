@@ -1,12 +1,12 @@
 "use client";
 
-import { Menu } from "lucide-react";
+import { Menu, MessageSquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { LangSwitcher } from "@/components/header/LangSwitcher";
-import { WhatsAppIcon } from "@/components/icons/WhatsApp";
 import {
   Sheet,
   SheetContent,
@@ -37,11 +37,21 @@ function buildWhatsappUrl(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-const CTA_BASE_CLASSES =
-  "group inline-flex items-center bg-glass-rose font-medium uppercase tracking-[0.18em] text-glass-black transition-all duration-300 ease-out shadow-lg shadow-glass-rose/20 hover:bg-glass-rose-deep hover:shadow-glass-rose/40 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black";
+function isActiveLink(href: string, pathname: string | null): boolean {
+  if (!pathname) return false;
+  if (href.startsWith("/#")) return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+const CTA_BASE =
+  "group inline-flex items-center bg-glass-rose font-medium uppercase tracking-[0.14em] text-glass-black transition-all duration-[250ms] ease-out shadow-[inset_0_-2px_0_rgba(0,0,0,0.08)] hover:bg-glass-rose-deep hover:scale-[1.02] hover:shadow-[inset_0_-2px_0_rgba(0,0,0,0.12),0_8px_24px_rgba(199,96,136,0.35)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black";
+
+const NAV_LINK_BASE =
+  "relative text-[13px] font-normal uppercase tracking-[0.12em] text-glass-white/85 transition-colors duration-200 ease-out hover:text-glass-rose focus-visible:text-glass-rose focus-visible:outline-none after:absolute after:bottom-[-4px] after:left-1/2 after:h-px after:-translate-x-1/2 after:bg-glass-rose after:content-[''] motion-safe:after:transition-[width] motion-safe:after:duration-300 motion-safe:after:ease-out";
 
 export function StickyHeader() {
   const { dictionary, locale } = useLocale();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const NAV_LINKS = buildNavLinks(locale);
@@ -70,8 +80,8 @@ export function StickyHeader() {
           scrolled ? "py-3 md:py-4" : "py-4 md:py-5",
         )}
       >
-        {/* LEFT — logo + FR/EN */}
-        <div className="flex items-center gap-3 md:gap-4">
+        {/* LEFT — logo + LangSwitcher */}
+        <div className="flex items-center gap-x-3 md:gap-x-4">
           <Link href="/" aria-label="Glass Club — accueil" className="block shrink-0">
             <Image
               src="/logo/glass-logo-blanc.png"
@@ -89,43 +99,62 @@ export function StickyHeader() {
 
         {/* CENTER — nav 6 ancres (xl+) */}
         <nav aria-label="Navigation principale" className="hidden xl:block">
-          <ul className="flex items-center gap-6 text-base font-medium uppercase tracking-[0.2em]">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-glass-white/80 transition-colors hover:text-glass-rose focus-visible:text-glass-rose focus-visible:outline-none"
-                >
-                  {dictionary.nav[link.labelKey]}
-                </a>
-              </li>
-            ))}
+          <ul className="flex items-center gap-x-9">
+            {NAV_LINKS.map((link) => {
+              const active = isActiveLink(link.href, pathname);
+              return (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className={cn(
+                      NAV_LINK_BASE,
+                      active
+                        ? "text-glass-rose after:w-full"
+                        : "after:w-0 motion-safe:hover:after:w-full",
+                    )}
+                    aria-current={active ? "page" : undefined}
+                  >
+                    {dictionary.nav[link.labelKey]}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
         {/* RIGHT — CTA WhatsApp + hamburger mobile */}
         <div className="flex items-center gap-3">
-          {/* Desktop (lg+) : CTA texte + icône WhatsApp officielle */}
+          {/* Desktop (lg+) */}
           <a
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contacter Glass Club via WhatsApp"
-            className={cn(CTA_BASE_CLASSES, "hidden gap-2.5 px-7 py-4 text-sm lg:inline-flex")}
+            className={cn(CTA_BASE, "hidden gap-2 px-6 py-3.5 text-[13px] lg:inline-flex")}
           >
-            <WhatsAppIcon size={18} className="-translate-y-px" />
+            <MessageSquare
+              size={18}
+              strokeWidth={1.75}
+              aria-hidden="true"
+              className="relative top-px"
+            />
             {headerStrings.ctaContact}
           </a>
 
-          {/* Tablet (md-lg) : CTA compact */}
+          {/* Tablet (md-lg) */}
           <a
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contacter Glass Club via WhatsApp"
-            className={cn(CTA_BASE_CLASSES, "hidden gap-2 px-6 py-3 text-xs md:inline-flex lg:hidden")}
+            className={cn(CTA_BASE, "hidden gap-2 px-5 py-3 text-xs md:inline-flex lg:hidden")}
           >
-            <WhatsAppIcon size={16} className="-translate-y-px" />
+            <MessageSquare
+              size={16}
+              strokeWidth={1.75}
+              aria-hidden="true"
+              className="relative top-px"
+            />
             {headerStrings.ctaContact}
           </a>
 
@@ -135,9 +164,9 @@ export function StickyHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contacter Glass Club via WhatsApp"
-            className="inline-flex h-10 w-10 items-center justify-center bg-glass-rose text-glass-black transition-all hover:bg-glass-rose-deep hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center bg-glass-rose text-glass-black shadow-[inset_0_-2px_0_rgba(0,0,0,0.08)] transition-all duration-[250ms] hover:bg-glass-rose-deep hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black md:hidden"
           >
-            <WhatsAppIcon size={18} />
+            <MessageSquare size={18} strokeWidth={1.75} aria-hidden="true" />
           </a>
 
           {/* Hamburger menu (<xl) */}
@@ -167,7 +196,7 @@ export function StickyHeader() {
                       <a
                         href={link.href}
                         onClick={() => setOpen(false)}
-                        className="tracking-label block text-sm uppercase text-glass-white transition-colors hover:text-glass-rose"
+                        className="block text-sm uppercase tracking-[0.12em] text-glass-white transition-colors hover:text-glass-rose"
                       >
                         {dictionary.nav[link.labelKey]}
                       </a>
@@ -182,13 +211,9 @@ export function StickyHeader() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className={cn(
-                    CTA_BASE_CLASSES,
-                    "h-11 justify-center gap-2 border-t border-white/10 px-5 text-xs",
-                  )}
-                  style={{ borderTop: "none" }}
+                  className={cn(CTA_BASE, "h-11 justify-center gap-2 px-5 text-xs")}
                 >
-                  <WhatsAppIcon size={14} />
+                  <MessageSquare size={14} strokeWidth={1.75} aria-hidden="true" />
                   {headerStrings.ctaContact}
                 </a>
               </div>
