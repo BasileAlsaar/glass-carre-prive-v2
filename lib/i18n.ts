@@ -113,20 +113,21 @@ export type Dictionary = {
     typeOptions: ReadonlyArray<{ value: string; label: string }>;
   };
   footer: {
-    contactLabel: string;
-    socialLabel: string;
-    hoursLabel: string;
-    hoursShort: string;
-    legalLabel: string;
-    creditsLabel: string;
+    brand: string;
+    address: string;
+    phoneDisplay: string;
+    hours: string;
+    location: string;
     copyright: string;
-    tagline: string;
-    links: {
-      whatsapp: string;
-      instagram: string;
-      linkedin: string;
-      facebook: string;
-    };
+    legal: string;
+    privacy: string;
+    terms: string;
+    cookies: string;
+    warning: string;
+    socialAriaInstagram: string;
+    socialAriaFacebook: string;
+    socialAriaLinkedin: string;
+    socialAriaWhatsapp: string;
   };
   reservation: {
     description: string;
@@ -371,20 +372,22 @@ const FR: Dictionary = {
     ],
   },
   footer: {
-    contactLabel: "CONTACT",
-    socialLabel: "SUIVEZ-NOUS",
-    hoursLabel: "HORAIRES",
-    hoursShort: "17h–05h · 7/7",
-    legalLabel: "Mentions légales",
-    creditsLabel: "Crédits photo Pexels",
-    copyright: "© 2026 Glass Club · Tous droits réservés.",
-    tagline: "Carré d'Or, Cannes — bar-club privatisable.",
-    links: {
-      whatsapp: "WhatsApp",
-      instagram: "Instagram",
-      linkedin: "LinkedIn",
-      facebook: "Facebook",
-    },
+    brand: "GLASS CLUB CANNES",
+    address: "6 rue des Frères Pradignac, 06400 Cannes, France",
+    phoneDisplay: "06 51 66 21 45",
+    hours: "17h–05h 7/7",
+    location: "3 min Palais des Festivals",
+    copyright: "© 2026 GLASS CLUB CANNES",
+    legal: "Mentions légales",
+    privacy: "Politique de confidentialité",
+    terms: "Termes et conditions",
+    cookies: "Cookies",
+    warning:
+      "Établissement réservé aux personnes majeures. L'abus d'alcool est dangereux pour la santé. À consommer avec modération.",
+    socialAriaInstagram: "Instagram du Glass Club",
+    socialAriaFacebook: "Facebook du Glass Club",
+    socialAriaLinkedin: "LinkedIn du Glass Club",
+    socialAriaWhatsapp: "WhatsApp du Glass Club",
   },
   reservation: {
     description:
@@ -637,20 +640,22 @@ const EN: Dictionary = {
     ],
   },
   footer: {
-    contactLabel: "CONTACT",
-    socialLabel: "FOLLOW",
-    hoursLabel: "HOURS",
-    hoursShort: "5pm–5am · 7/7",
-    legalLabel: "Legal notice",
-    creditsLabel: "Pexels photo credits",
-    copyright: "© 2026 Glass Club · All rights reserved.",
-    tagline: "Carré d'Or, Cannes — a bar-club for private hire.",
-    links: {
-      whatsapp: "WhatsApp",
-      instagram: "Instagram",
-      linkedin: "LinkedIn",
-      facebook: "Facebook",
-    },
+    brand: "GLASS CLUB CANNES",
+    address: "6 rue des Frères Pradignac, 06400 Cannes, France",
+    phoneDisplay: "06 51 66 21 45",
+    hours: "5pm–5am 7/7",
+    location: "3 min from Palais des Festivals",
+    copyright: "© 2026 GLASS CLUB CANNES",
+    legal: "Legal notice",
+    privacy: "Privacy policy",
+    terms: "Terms and conditions",
+    cookies: "Cookies",
+    warning:
+      "Adults only. Excessive alcohol consumption is harmful to health. Drink responsibly.",
+    socialAriaInstagram: "Glass Club Instagram",
+    socialAriaFacebook: "Glass Club Facebook",
+    socialAriaLinkedin: "Glass Club LinkedIn",
+    socialAriaWhatsapp: "Glass Club WhatsApp",
   },
   reservation: {
     description: "Book a table in seconds. Caroline confirms within 24h.",
