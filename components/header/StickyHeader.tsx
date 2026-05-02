@@ -71,7 +71,7 @@ export function StickyHeader() {
       <div
         className={cn(
           "mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-4 md:px-8 motion-safe:transition-[padding] motion-safe:duration-300",
-          scrolled ? "py-3" : "py-5 md:py-7",
+          scrolled ? "py-3 md:py-4" : "py-4 md:py-5",
         )}
       >
         {/* LEFT — logo + FR/EN cluster */}
@@ -84,11 +84,8 @@ export function StickyHeader() {
               height={5000}
               priority
               quality={95}
-              sizes="(min-width: 1024px) 64px, (min-width: 768px) 56px, 48px"
-              className={cn(
-                "w-auto object-contain motion-safe:transition-[height] motion-safe:duration-300 motion-safe:ease-out",
-                scrolled ? "h-9 md:h-11 lg:h-12" : "h-12 md:h-14 lg:h-16",
-              )}
+              sizes="(min-width: 1024px) 80px, (min-width: 768px) 64px, 56px"
+              className="h-14 w-auto object-contain md:h-16 lg:h-20"
             />
           </Link>
           <LangSwitcher className="hidden md:block" />
@@ -96,7 +93,7 @@ export function StickyHeader() {
 
         {/* CENTER — nav 6 ancres (xl+) */}
         <nav aria-label="Navigation principale" className="hidden xl:block">
-          <ul className="tracking-label flex items-center gap-6 text-[11px] uppercase">
+          <ul className="flex items-center gap-6 text-base font-medium uppercase tracking-[0.2em]">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
