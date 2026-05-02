@@ -29,7 +29,7 @@ export function Footer() {
     <footer
       role="contentinfo"
       id="contact"
-      className="bg-glass-black px-6 py-20 text-center md:py-32"
+      className="bg-glass-black px-6 pt-12 pb-8 text-center md:pt-20"
     >
       <div className="mx-auto flex w-full max-w-3xl flex-col items-center">
         <h2 className="text-base uppercase tracking-[0.3em] text-glass-white">

@@ -1,11 +1,12 @@
 "use client";
 
-import { Mail, Menu, MessageCircle } from "lucide-react";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { LangSwitcher } from "@/components/header/LangSwitcher";
+import { WhatsAppIcon } from "@/components/icons/WhatsApp";
 import {
   Sheet,
   SheetContent,
@@ -17,7 +18,6 @@ import { useLocale } from "@/lib/locale-context";
 import { cn } from "@/lib/utils";
 
 const WHATSAPP_NUMBER = "33651662145";
-const EMAIL_ADDRESS = "caroline@glasscannes.com";
 
 type NavLabelKey = "privatization" | "menu" | "events" | "membership" | "blog" | "about";
 type NavLink = { href: string; labelKey: NavLabelKey };
@@ -37,9 +37,8 @@ function buildWhatsappUrl(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-function buildMailtoUrl(subject: string): string {
-  return `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}`;
-}
+const CTA_BASE_CLASSES =
+  "group inline-flex items-center bg-glass-rose font-medium uppercase tracking-[0.18em] text-glass-black transition-all duration-300 ease-out shadow-lg shadow-glass-rose/20 hover:bg-glass-rose-deep hover:shadow-glass-rose/40 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black";
 
 export function StickyHeader() {
   const { dictionary, locale } = useLocale();
@@ -48,10 +47,7 @@ export function StickyHeader() {
   const NAV_LINKS = buildNavLinks(locale);
   const headerStrings = dictionary.header;
   const waUrl = buildWhatsappUrl(headerStrings.whatsappMessage);
-  const mailUrl = buildMailtoUrl(headerStrings.emailSubject);
 
-  // Scroll-top : header transparent immersif. Scroll > 80 : compact +
-  // glass-black blur. Throttle naturel via passive listener.
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
@@ -74,7 +70,7 @@ export function StickyHeader() {
           scrolled ? "py-3 md:py-4" : "py-4 md:py-5",
         )}
       >
-        {/* LEFT — logo + FR/EN cluster */}
+        {/* LEFT — logo + FR/EN */}
         <div className="flex items-center gap-3 md:gap-4">
           <Link href="/" aria-label="Glass Club — accueil" className="block shrink-0">
             <Image
@@ -107,66 +103,44 @@ export function StickyHeader() {
           </ul>
         </nav>
 
-        {/* RIGHT — contact cluster (desktop) + WhatsApp icon-only (tablet) + hamburger (mobile) */}
+        {/* RIGHT — CTA WhatsApp + hamburger mobile */}
         <div className="flex items-center gap-3">
-          {/* Desktop : cluster vertical CTA + email */}
-          <div className="hidden flex-col items-end gap-1.5 lg:flex">
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contacter Glass Club via WhatsApp"
-              className="tracking-[0.15em] group inline-flex items-center gap-2 bg-glass-rose px-6 py-3 text-sm font-semibold uppercase text-glass-black transition-all hover:scale-[1.02] hover:bg-glass-rose-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black"
-            >
-              <MessageCircle size={16} aria-hidden="true" />
-              {headerStrings.ctaContact}
-            </a>
-            <a
-              href={mailUrl}
-              className={cn(
-                "text-xs tracking-wide transition-colors hover:text-glass-rose focus-visible:text-glass-rose focus-visible:outline-none",
-                scrolled ? "text-glass-mute" : "text-glass-white/70",
-              )}
-            >
-              {EMAIL_ADDRESS}
-            </a>
-          </div>
-
-          {/* Tablet (md to lg) : CTA compact + email mini */}
-          <div className="hidden flex-col items-end gap-1 md:flex lg:hidden">
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contacter Glass Club via WhatsApp"
-              className="tracking-[0.15em] inline-flex items-center gap-1.5 bg-glass-rose px-4 py-2 text-xs font-semibold uppercase text-glass-black transition-all hover:bg-glass-rose-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black"
-            >
-              <MessageCircle size={14} aria-hidden="true" />
-              {headerStrings.ctaContact}
-            </a>
-            <a
-              href={mailUrl}
-              className={cn(
-                "text-[10px] tracking-wide transition-colors hover:text-glass-rose",
-                scrolled ? "text-glass-mute" : "text-glass-white/70",
-              )}
-            >
-              {EMAIL_ADDRESS}
-            </a>
-          </div>
-
-          {/* Mobile : icône WhatsApp seule */}
+          {/* Desktop (lg+) : CTA texte + icône WhatsApp officielle */}
           <a
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contacter Glass Club via WhatsApp"
-            className="inline-flex h-10 w-10 items-center justify-center bg-glass-rose text-glass-black transition-colors hover:bg-glass-rose-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black md:hidden"
+            className={cn(CTA_BASE_CLASSES, "hidden gap-2.5 px-7 py-4 text-sm lg:inline-flex")}
           >
-            <MessageCircle size={18} aria-hidden="true" />
+            <WhatsAppIcon size={18} className="-translate-y-px" />
+            {headerStrings.ctaContact}
           </a>
 
-          {/* Hamburger mobile (< xl) */}
+          {/* Tablet (md-lg) : CTA compact */}
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contacter Glass Club via WhatsApp"
+            className={cn(CTA_BASE_CLASSES, "hidden gap-2 px-6 py-3 text-xs md:inline-flex lg:hidden")}
+          >
+            <WhatsAppIcon size={16} className="-translate-y-px" />
+            {headerStrings.ctaContact}
+          </a>
+
+          {/* Mobile (<md) : icône seule */}
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contacter Glass Club via WhatsApp"
+            className="inline-flex h-10 w-10 items-center justify-center bg-glass-rose text-glass-black transition-all hover:bg-glass-rose-deep hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black md:hidden"
+          >
+            <WhatsAppIcon size={18} />
+          </a>
+
+          {/* Hamburger menu (<xl) */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <button
@@ -203,26 +177,20 @@ export function StickyHeader() {
                 <div className="border-t border-white/10 pt-6">
                   <LangSwitcher />
                 </div>
-                <div className="flex flex-col gap-3 border-t border-white/10 pt-6">
-                  <a
-                    href={waUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setOpen(false)}
-                    className="tracking-[0.15em] inline-flex h-11 items-center justify-center gap-2 bg-glass-rose px-5 text-xs font-semibold uppercase text-glass-black transition-colors hover:bg-glass-rose-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black"
-                  >
-                    <MessageCircle size={14} aria-hidden="true" />
-                    {headerStrings.ctaContact}
-                  </a>
-                  <a
-                    href={mailUrl}
-                    onClick={() => setOpen(false)}
-                    className="tracking-label inline-flex h-11 items-center justify-center gap-2 border border-glass-rose px-5 text-[11px] font-medium uppercase text-glass-rose transition-colors hover:bg-glass-rose hover:text-glass-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass-blood focus-visible:ring-offset-4 focus-visible:ring-offset-glass-black"
-                  >
-                    <Mail size={14} aria-hidden="true" />
-                    {headerStrings.emailCaroline}
-                  </a>
-                </div>
+                <a
+                  href={waUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    CTA_BASE_CLASSES,
+                    "h-11 justify-center gap-2 border-t border-white/10 px-5 text-xs",
+                  )}
+                  style={{ borderTop: "none" }}
+                >
+                  <WhatsAppIcon size={14} />
+                  {headerStrings.ctaContact}
+                </a>
               </div>
             </SheetContent>
           </Sheet>

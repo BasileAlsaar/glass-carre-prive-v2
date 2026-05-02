@@ -35,10 +35,8 @@ export type Dictionary = {
     ctaContact: string;
     /** Texte pré-rempli dans le lien WhatsApp (sera URL-encodé). */
     whatsappMessage: string;
-    /** Sujet pré-rempli dans le lien mailto. */
+    /** Sujet pré-rempli dans le lien mailto (utilisé par le footer / contact uniquement). */
     emailSubject: string;
-    /** Entrée "Email Caroline" du menu hamburger mobile. */
-    emailCaroline: string;
   };
   hero: {
     /** Tagline display sur 2 lignes (BRIEF §6, §6bis.2). */
@@ -280,7 +278,6 @@ const FR: Dictionary = {
     whatsappMessage:
       "Bonjour, je souhaite des informations sur Glass Club Cannes.",
     emailSubject: "Demande d'information — Glass Club",
-    emailCaroline: "Email Caroline",
   },
   hero: {
     taglineLine1: "Bar-club privatisable",
@@ -548,7 +545,6 @@ const EN: Dictionary = {
     ctaContact: "Contact us",
     whatsappMessage: "Hello, I would like information about Glass Club Cannes.",
     emailSubject: "Information request — Glass Club",
-    emailCaroline: "Email Caroline",
   },
   hero: {
     taglineLine1: "A bar-club for private hire",
