@@ -3,7 +3,7 @@
 import { Mail, Menu, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { LangSwitcher } from "@/components/header/LangSwitcher";
 import {
@@ -14,7 +14,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useLocale } from "@/lib/locale-context";
-import { cn } from "@/lib/utils";
 
 const WHATSAPP_NUMBER = "33651662145";
 const EMAIL_ADDRESS = "caroline@glasscannes.com";
@@ -44,29 +43,14 @@ function buildMailtoUrl(subject: string): string {
 export function StickyHeader() {
   const { dictionary, locale } = useLocale();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const NAV_LINKS = buildNavLinks(locale);
   const headerStrings = dictionary.header;
   const waUrl = buildWhatsappUrl(headerStrings.whatsappMessage);
   const mailUrl = buildMailtoUrl(headerStrings.emailSubject);
 
-  // Logo shrinks de h-12 → h-10 sur desktop après scroll > 80px.
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-glass-black/70 backdrop-blur-md">
-      <div
-        className={cn(
-          "mx-auto flex max-w-[1440px] items-center justify-between gap-4 transition-[height] duration-200",
-          "h-16 px-4 md:h-20 md:px-8",
-          scrolled ? "lg:h-20" : "lg:h-28",
-        )}
-      >
+      <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-4 px-4 md:h-20 md:px-8 lg:h-28">
         {/* LEFT — logo + FR/EN cluster */}
         <div className="flex items-center gap-3 md:gap-4">
           <Link href="/" aria-label="Glass Club — accueil" className="block shrink-0">
@@ -77,12 +61,8 @@ export function StickyHeader() {
               height={5000}
               priority
               quality={95}
-              sizes="(min-width: 1024px) 64px, (min-width: 768px) 56px, 44px"
-              className={cn(
-                "object-contain transition-[height,width] duration-200",
-                "h-11 w-auto md:h-14",
-                scrolled ? "lg:h-12" : "lg:h-16",
-              )}
+              sizes="(min-width: 1024px) 80px, (min-width: 768px) 56px, 44px"
+              className="h-11 w-auto object-contain md:h-14 lg:h-20"
             />
           </Link>
           <LangSwitcher className="hidden md:block" />
