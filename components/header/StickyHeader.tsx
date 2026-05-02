@@ -3,7 +3,7 @@
 import { Mail, Menu, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { LangSwitcher } from "@/components/header/LangSwitcher";
 import {
@@ -14,6 +14,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useLocale } from "@/lib/locale-context";
+import { cn } from "@/lib/utils";
 
 const WHATSAPP_NUMBER = "33651662145";
 const EMAIL_ADDRESS = "caroline@glasscannes.com";
@@ -43,14 +44,36 @@ function buildMailtoUrl(subject: string): string {
 export function StickyHeader() {
   const { dictionary, locale } = useLocale();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const NAV_LINKS = buildNavLinks(locale);
   const headerStrings = dictionary.header;
   const waUrl = buildWhatsappUrl(headerStrings.whatsappMessage);
   const mailUrl = buildMailtoUrl(headerStrings.emailSubject);
 
+  // Scroll-top : header transparent immersif. Scroll > 80 : compact +
+  // glass-black blur. Throttle naturel via passive listener.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-glass-black/70 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-4 px-4 md:h-20 md:px-8 lg:h-28">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 motion-safe:transition-[background-color,backdrop-filter,border-color,padding] motion-safe:duration-300 motion-safe:ease-out",
+        scrolled
+          ? "border-b border-glass-rose/10 bg-glass-black/85 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent",
+      )}
+    >
+      <div
+        className={cn(
+          "mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-4 md:px-8 motion-safe:transition-[padding] motion-safe:duration-300",
+          scrolled ? "py-3" : "py-5 md:py-7",
+        )}
+      >
         {/* LEFT — logo + FR/EN cluster */}
         <div className="flex items-center gap-3 md:gap-4">
           <Link href="/" aria-label="Glass Club — accueil" className="block shrink-0">
@@ -61,8 +84,11 @@ export function StickyHeader() {
               height={5000}
               priority
               quality={95}
-              sizes="(min-width: 1024px) 80px, (min-width: 768px) 56px, 44px"
-              className="h-11 w-auto object-contain md:h-14 lg:h-20"
+              sizes="(min-width: 1024px) 64px, (min-width: 768px) 56px, 48px"
+              className={cn(
+                "w-auto object-contain motion-safe:transition-[height] motion-safe:duration-300 motion-safe:ease-out",
+                scrolled ? "h-9 md:h-11 lg:h-12" : "h-12 md:h-14 lg:h-16",
+              )}
             />
           </Link>
           <LangSwitcher className="hidden md:block" />
@@ -100,7 +126,10 @@ export function StickyHeader() {
             </a>
             <a
               href={mailUrl}
-              className="text-xs tracking-wide text-glass-mute transition-colors hover:text-glass-rose focus-visible:text-glass-rose focus-visible:outline-none"
+              className={cn(
+                "text-xs tracking-wide transition-colors hover:text-glass-rose focus-visible:text-glass-rose focus-visible:outline-none",
+                scrolled ? "text-glass-mute" : "text-glass-white/70",
+              )}
             >
               {EMAIL_ADDRESS}
             </a>
@@ -120,7 +149,10 @@ export function StickyHeader() {
             </a>
             <a
               href={mailUrl}
-              className="text-[10px] tracking-wide text-glass-mute transition-colors hover:text-glass-rose"
+              className={cn(
+                "text-[10px] tracking-wide transition-colors hover:text-glass-rose",
+                scrolled ? "text-glass-mute" : "text-glass-white/70",
+              )}
             >
               {EMAIL_ADDRESS}
             </a>
