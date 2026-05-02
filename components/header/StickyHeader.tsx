@@ -60,7 +60,13 @@ export function StickyHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-glass-black/70 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-4 px-5 md:h-20 md:px-8 lg:h-24">
+      <div
+        className={cn(
+          "mx-auto flex max-w-[1440px] items-center justify-between gap-4 transition-[height] duration-200",
+          "h-16 px-4 md:h-20 md:px-8",
+          scrolled ? "lg:h-20" : "lg:h-28",
+        )}
+      >
         {/* LEFT — logo + FR/EN cluster */}
         <div className="flex items-center gap-3 md:gap-4">
           <Link href="/" aria-label="Glass Club — accueil" className="block shrink-0">
@@ -70,10 +76,12 @@ export function StickyHeader() {
               width={5000}
               height={5000}
               priority
-              sizes="56px"
+              quality={95}
+              sizes="(min-width: 1024px) 64px, (min-width: 768px) 56px, 44px"
               className={cn(
-                "h-9 w-9 transition-[height,width] duration-200 md:h-10 md:w-10",
-                scrolled ? "lg:h-10 lg:w-10" : "lg:h-12 lg:w-12",
+                "object-contain transition-[height,width] duration-200",
+                "h-11 w-auto md:h-14",
+                scrolled ? "lg:h-12" : "lg:h-16",
               )}
             />
           </Link>
